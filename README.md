@@ -105,4 +105,7 @@ Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` f
 
 ---
 
+P words: https://the-big-bang-theory.com/rock-paper-scissors-lizard-spock/
+
+
 Happy coding!
