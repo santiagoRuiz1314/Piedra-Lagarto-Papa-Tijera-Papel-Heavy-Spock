@@ -19,7 +19,17 @@ p {
     height: 600px;
 }
 
+#choose-area {
+    display: flex;
+    justify-content: center;
+}
+
 #game-area {
+    display: flex;
+    justify-content: center;
+}
+
+#score-area {
     display: flex;
     justify-content: center;
 }
