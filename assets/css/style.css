@@ -9,12 +9,47 @@ body {
     font-family: 'Prompt', sans-serif;
 }
 
+p {
+    width: 600px;
+    margin: auto;
+}
+
 #rules {
     background: url(/assets/images/game_rules.png) no-repeat center center;
     height: 600px;
 }
 
-p {
-    width: 600px;
-    margin: auto;
+#game-area {
+    display: flex;
+    justify-content: center;
+}
+
+#rock {
+    background: url(/assets/images/Rock.png) no-repeat center center;
+    height: 160px;
+    width: 160px;
+}
+
+#paper {
+    background: url(/assets/images/Paper.png) no-repeat center center;
+    height: 160px;
+    width: 160px;
+}
+
+#scissors {
+    background: url(/assets/images/Scissors.png) no-repeat center center;
+    height: 160px;
+    width: 160px;
+}
+
+#lizard {
+    background: url(/assets/images/Lizard.png) no-repeat center center;
+    height: 160px;
+    width: 160px;
+}
+
+#spock {
+        background: url(/assets/images/Spock.png) no-repeat center center;
+        height: 160px;
+        width: 160px;
 }
