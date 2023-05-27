@@ -13,3 +13,8 @@ body {
     background: url(/assets/images/game_rules.png) no-repeat center center;
     height: 600px;
 }
+
+p {
+    width: 600px;
+    margin: auto;
+}
