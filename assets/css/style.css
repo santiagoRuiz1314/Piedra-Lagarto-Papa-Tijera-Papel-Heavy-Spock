@@ -10,7 +10,8 @@ body {
 }
 
 p {
-    width: 600px;
+    width: 350px;
+    text-align: center;
     margin: auto;
 }
 
@@ -19,25 +20,20 @@ p {
     height: 600px;
 }
 
-#choose-area {
+#choose-area, #game-area, #score-area {
     display: flex;
     justify-content: center;
 }
 
-#game-area {
-    display: flex;
-    justify-content: center;
-}
-
-#score-area {
-    display: flex;
-    justify-content: center;
+#rule-button {
+    margin: auto;
 }
 
 #rock {
     background: url(/assets/images/Rock.png) no-repeat center center;
     height: 160px;
     width: 160px;
+    vertical-align: top;
 }
 
 #paper {
