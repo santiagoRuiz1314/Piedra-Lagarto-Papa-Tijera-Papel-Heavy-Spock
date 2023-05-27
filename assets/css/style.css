@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Prompt:wght@200&display=swap');
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+}
+
+#rules {
+    background: url(/assets/images/game_rules.png) no-repeat center center;
+    height: 600px;
+}
