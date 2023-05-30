@@ -29,30 +29,40 @@ p {
     background: url(/assets/images/Rock.png) no-repeat center center;
     height: 160px;
     width: 160px;
+    border-radius: 80px;
+    margin: 5px;
 }
 
 #paper {
     background: url(/assets/images/Paper.png) no-repeat center center;
     height: 160px;
     width: 160px;
+    border-radius: 80px;
+    margin: 5px;
 }
 
 #scissors {
     background: url(/assets/images/Scissors.png) no-repeat center center;
     height: 160px;
     width: 160px;
+    border-radius: 80px;
+    margin: 5px;
 }
 
 #lizard {
     background: url(/assets/images/Lizard.png) no-repeat center center;
     height: 160px;
     width: 160px;
+    border-radius: 80px;
+    margin: 5px;
 }
 
 #spock {
     background: url(/assets/images/Spock.png) no-repeat center center;
     height: 160px;
     width: 160px;
+    border-radius: 80px;
+    margin: 5px;
 }
 
 /* Game area syling */
@@ -65,19 +75,27 @@ p {
 
 #player-image {
     border: 2px solid black;
+    border-radius: 80px;
 }
 
 #computer-image {
     border: 2px solid black;
+    border-radius: 80px;
 }
 
+/* Score counter styling */
 
+.score {
+    margin: 0 5px 0 20px;
+}
 
 
 
 
 #rule-button {
     margin: auto;
+    display: flex;
+    justify-content: center;
 }
 
 #rules {
