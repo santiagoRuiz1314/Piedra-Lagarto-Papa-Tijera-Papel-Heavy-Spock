@@ -1,3 +1,5 @@
+/* General styling for the page */
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Prompt:wght@200&display=swap');
 
 h1 {
@@ -15,25 +17,18 @@ p {
     margin: auto;
 }
 
-#rules {
-    background: url(/assets/images/game_rules.png) no-repeat center center;
-    height: 600px;
-}
+/* Choose area styling */
 
 #choose-area, #game-area, #score-area {
     display: flex;
     justify-content: center;
-}
-
-#rule-button {
-    margin: auto;
+    margin: 20px 0 20px 0;
 }
 
 #rock {
     background: url(/assets/images/Rock.png) no-repeat center center;
     height: 160px;
     width: 160px;
-    vertical-align: top;
 }
 
 #paper {
@@ -55,7 +50,37 @@ p {
 }
 
 #spock {
-        background: url(/assets/images/Spock.png) no-repeat center center;
-        height: 160px;
-        width: 160px;
+    background: url(/assets/images/Spock.png) no-repeat center center;
+    height: 160px;
+    width: 160px;
+}
+
+/* Game area syling */
+
+#game-area > div {
+    height: 160px;
+    width: 160px;
+    text-align: center;
+}
+
+#player-image {
+    border: 2px solid black;
+}
+
+#computer-image {
+    border: 2px solid black;
+}
+
+
+
+
+
+
+#rule-button {
+    margin: auto;
+}
+
+#rules {
+    background: url(/assets/images/game_rules.png) no-repeat center center;
+    height: 600px;
 }
