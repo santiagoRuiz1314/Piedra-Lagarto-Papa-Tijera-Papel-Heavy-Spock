@@ -1,111 +1,122 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+#Rock Paper Scissors Lizard Spock
 
-Welcome USER_NAME,
+This website has been based on the Rock, Paper, Scissors, Lizard, Spock game originally created by Sam Kass. Fans of the Big Bang Theory television series will recognise this game as it features in their episodes. This site provides an interactive version of the game where users can play against the computer with the goal of being the first to 10 wins. 
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The website has been made to complete the second project within the Code Institute Full Stack Developer course and focuses predominately on the use of the Java Script language. It also uses HTML5 and CCS3 for the structure of the site being built in a way that allows it to be responsive across a range of devices. 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+[am I responsive]
 
-## Gitpod Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+Link to live project: 
 
-`python3 -m http.server`
+##User Experience
 
-A blue button should appear to click: _Make Public_,
+The target audience for this site are fans of the Big Bang Theory who will already be familiar with the game from watching the television series. This site is intended to allow them to play the game, as seen on television, against a randomised computer output. 
 
-Another blue button should appear to click: _Open Browser_.
+The user goals for new and returning users are the same:
+As a user, I want to play the game as seen in the television show
+As a user, I want the game to have a goal to aim for with a tally of scores
+As a new user, I want be reminded of the rules of the game
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+##Development Planes
 
-A blue button should appear to click: _Make Public_,
+To develop the site in a structured manner for the 5 development planes have been considered. Working through these in a systematic manner allows the key building blocks of the site to be in place before fine tuning the aesthetics. Working methodically in this way should result in the initial release being much closer to the final desired output. 
 
-Another blue button should appear to click: _Open Browser_.
+###Strategy
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+There are no commercial drivers for this website, it’s pure focus is to provide an interactive game for fans of the Big Bang Theory series. Therefore the only strategic requirements for the site are to ensure the user has an authentic gaming experience which:
+is accurate to the rules of the game
+Feels genuine I.e; computer opponent is fair
+Is interactive and engaging 
 
-To log into the Heroku toolbelt CLI:
+###Scope
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Defining the scope at this early stage allows the development work to stay focused, it agrees what is on and off the table for the initial release. 
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+Based on the user experience and strategy above, the content requirements are:
+A reminder of the rules of the game 
+A game area for the user to interact with
+A goal for the user to work towards 
+A score counter for the user to being to track against the goal
 
-------
+###Structure
+The structure of this site is very simple:
+Game page; will hold the game content  
+Rules page; linked from the home page and opens in a new tab. A static page showing the rules
 
-## Release History
+[ADD WIREFRAME]
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+###Skeleton
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+In order to visualise the pages, the content has been mocked up using wireframes. Using wireframes at this stage of the development allows the freedom to be creative with design without being tied into the code. This gives a flavour of how the page(s) will look and can be easily modified until agreement is reached. 
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+Balsamiq was used to create the wireframes: 
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+Game page:
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+[ADD WIREFRAME]
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+Rules page:
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+[ADD WIREFRAME]
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+At this stage, the wireframes are reviewed against the original goals and strategy for the site. It is important to check the design is fit for purpose before committing to the coding process. For this site the review showed the design to meet the requirements and therefore was ok to proceed. 
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+###Surface:
+Once the structure and wireframe have been agreed, the look and feel of the site can be developed. This may need to align to branding but in the case of this site there are no commercial requirements. 
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+####Colour
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+####Font
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+####Images
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
 
-------
+####Icons
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+###Features: 
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+Technologies used:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+Coding languages used: 
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+HTML5
+CCS3
+Java Script
 
-**So….?**
+External resources: 
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+##Accessibility: 
 
-**Can I opt out?**
+Considering how to make a website is accessible to all users should be high on the list of priorities during development. For this site the following aspects have been incorporated:
+Alt labels on the images/buttons
+Aria label on the “rules page” link 
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+Within Google Developer tools, Lighthouse is a way of measuring the accessibility of a website. For this site the report shows as below:
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+[ADD LIGHTHOUSE REPORT]
 
-**Anything more?**
+##Testing
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+##Bugs
 
----
+##Deployment
+
+This project was developed using Code Anywhere and all updates were committed to GitHub to keep track of changes and store the code. The website is deployed using GitHub Pages which provides a published link to the live site. 
+
+###Credits 
+
+###Media:
+
+###Words: 
 
 P words: https://the-big-bang-theory.com/rock-paper-scissors-lizard-spock/
 
+###Code:
 
-Happy coding!
+Acknowledgements:
