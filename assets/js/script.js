@@ -1,57 +1,53 @@
-// Declare constants
+// set-up event listeners for the 5 player choice options  
 
-const buttons = document.getElementsByClassName("button");
-const choices = ["rock", "paper", "scissors", "lizard", "spock"];
+let rockButton = document.getElementById("rock");
+let scissorsButton = document.getElementById("scissors");
+let paperButton = document.getElementById("paper");
+let lizardButton = document.getElementById("lizard");
+let spockButton = document.getElementById("spock");
 
-/**
- * Wait for DOM to load before running the game
- * Get button elements and add event listeners for each button
- */
-
-document.addEventListener("DOMContentLoaded", function(){
-    for (let button of buttons) {
-        if (playerScore || computerScore > 10) {
-        button.addEventListener("click", runGame())
-        } else  if (playerScore === 10) {
-            alert("You win");
-          } else (computerScore === 10) {
-            alert("Computer wins");
-          }
-    }
+rockButton.addEventListener("click",function() {
+    playerImage('rock');
 })
 
-//The main game loop used for each players choice
+paperButton.addEventListener("click",function() {
+    playerImage('paper');
+})
 
-function (runGame) {
+scissorsButton.addEventListener("click",function() {
+    playerImage('scissors');
+})
 
-}
+lizardButton.addEventListener("click",function() {
+    playerImage('lizard');
+})
 
+spockButton.addEventListener("click",function() {
+    playerImage('spock');
+})
 
-function (playerChoice) {
+/*
+* Feeds correct image into player selection area based 
+* on what is clicked
+*/
 
-}
-
-function (computerChoice) {
-    let computer = Math.floor(Math.random() *5);
-
-    switch (computer) {
-        case 0:
-            document.getElementById("computer-image").background = "url(/assets/images/Rock.png) no-repeat center center";
+function playerImage(playType) {
+    switch (playType) {
+        case "rock":
+            document.getElementById('player-image').style.background="url(/assets/images/Rock.png)";
             break;
-
-        case 1:
-            document.getElementById("computer-image").background = "url(/assets/images/Paper.png) no-repeat center center";
+        case "paper":
+            document.getElementById('player-image').style.background="url(/assets/images/Paper.png)";
             break;
-
-        case 2:
-            document.getElementById("computer-image").background = "url(/assets/images/Scissors.png) no-repeat center center";
+        case "scissors":
+            document.getElementById('player-image').style.background="url(/assets/images/Scissors.png)";
+            break; 
+        case "lizard":
+            document.getElementById('player-image').style.background="url(/assets/images/Lizard.png)";
             break;
-
-        case 3:
-            document.getElementById("computer-image").background = "url(/assets/images/Lizard.png) no-repeat center center";
+        case "spock":
+            document.getElementById('player-image').style.background="url(/assets/images/Spock.png)";
             break;
-
-        case 4:
-        document.getElementById("computer-image").background = "url(/assets/images/Spock.png) no-repeat center center";
-        break;
     }
+  }
+
