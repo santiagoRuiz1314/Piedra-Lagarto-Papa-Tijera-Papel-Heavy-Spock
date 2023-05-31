@@ -1,3 +1,16 @@
+// start button 
+
+let startButton = document.getElementById("start")
+
+startButton.addEventListener("click",function() {
+    setTimeout(()=> {
+        document.getElementById('computer-image').innerText = "Waiting for player";
+     }
+     ,1000);
+})
+
+
+
 // set-up event listeners for the 5 player choice options  
 
 let rockButton = document.getElementById("rock");
@@ -59,7 +72,7 @@ function playerChoice(playType) {
 
 function computerChoice() {
     
-    let ranNum = Math.floor(Math.random() * 4)
+    let ranNum = Math.floor(Math.random() * 5)
    
     switch (ranNum) {
         case "0":
@@ -82,6 +95,6 @@ function computerChoice() {
 
 // main game function loop 
 
-function () {
-    
+function runGame(playType) {
+
 }
