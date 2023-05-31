@@ -7,11 +7,13 @@ startButton.addEventListener("click",function() {
         document.getElementById('computer-image').innerText = "Waiting for player";
      }
      ,1000);
+     runGame();
+     computerChoice();
 })
 
-
-
-// set-up event listeners for the 5 player choice options  
+/* Set-up event listeners for the 5 player choice options
+* and run playerChoice function when clicked
+*/
 
 let rockButton = document.getElementById("rock");
 let scissorsButton = document.getElementById("scissors");
@@ -72,9 +74,9 @@ function playerChoice(playType) {
 
 function computerChoice() {
     
-    let ranNum = Math.floor(Math.random() * 5)
+    let computerChoice = Math.floor(Math.random() * 5)
    
-    switch (ranNum) {
+    switch (computerChoice) {
         case "0":
             document.getElementById('computer-image').style.background="url(/assets/images/Rock.png)";
             break;
@@ -93,8 +95,40 @@ function computerChoice() {
     }
 }
 
+/* 
+* Checks if either score is at 10 and declares a winner
+* If score hasn't reached 10, declares winner for the round
+* and updates score counter
+*/
+
+function scores() {
+    let pScore = document.getElementById("pScore")
+    let cScore = document.getElementById("cScore")
+   
+    if (pScore || cScore < 10) {
+        //declare winner or round]
+    } else if (pScore === 10){
+
+    } else {
+
+    }
+}
+
 // main game function loop 
 
 function runGame(playType) {
+    var result;
 
+   if (computerChoice == 0) {
+    if (playType == "paper" || playtype == "spock") {
+        console.log("userWins");
+    } else if (playType == "rock") {
+        result = draw;
+    } else {
+        result = computerWins;
+    }
+   }
+
+    
 }
+
