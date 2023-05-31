@@ -8,7 +8,6 @@ startButton.addEventListener("click",function() {
      }
      ,1000);
      runGame();
-     computerChoice();
 })
 
 /* Set-up event listeners for the 5 player choice options
@@ -23,22 +22,27 @@ let spockButton = document.getElementById("spock");
 
 rockButton.addEventListener("click",function() {
     playerChoice('rock');
+    computerChoice();
 })
 
 paperButton.addEventListener("click",function() {
     playerChoice('paper');
+    computerChoice();
 })
 
 scissorsButton.addEventListener("click",function() {
     playerChoice('scissors');
+    computerChoice();
 })
 
 lizardButton.addEventListener("click",function() {
     playerChoice('lizard');
+    computerChoice();
 })
 
 spockButton.addEventListener("click",function() {
     playerChoice('spock');
+    computerChoice();
 })
 
 /*
@@ -75,6 +79,7 @@ function playerChoice(playType) {
 function computerChoice() {
     
     let computerChoice = Math.floor(Math.random() * 5)
+    console.log(computerChoice);
    
     switch (computerChoice) {
         case "0":
