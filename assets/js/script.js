@@ -1,5 +1,8 @@
 // start button 
 
+var computerPlay;
+var playType;
+
 let startButton = document.getElementById("start")
 
 startButton.addEventListener("click",function() {
@@ -87,7 +90,7 @@ function playerChoice(playType) {
 
 function computerChoice() {
     
-    let computerPlay = Math.floor(Math.random() * 5)
+    computerPlay = Math.floor(Math.random() * 5)
    
     switch (computerPlay) {
         case 0:
@@ -115,19 +118,52 @@ function computerChoice() {
 
 // main game function loop 
 
-function runGame(computerPlay) {
-    console.log("Game running");
+function runGame() {
+    console.log(computerPlay);
 
    if (computerPlay === 0) {
-    if (playType == "paper" || playType == "spock") {
-        console.log("User Wins!");
-    } else if (playType == "rock") {
+        if (playType == "paper" || playType == "spock") {
+        console.log("Computer wins!");
+        } else if (playType == "rock") {
         console.log("Draw");
-    } else {
-        console.log("Computer wins");
+        } else {
+        console.log("User wins");
+        }
+    } else if (computerPlay === 1) {
+        if (playType == "rock" || playType == "spock") {
+        console.log("Computer wins!");
+         } else if (playType == "paper") {
+        console.log("Draw");
+        } else {
+        console.log("User wins");
+        }
+    } else if (computerPlay === 2) {
+        if (playType == "paper" || playType == "lizard") {
+            console.log("Computer Wins!");
+        } else if (playType == "scissors") {
+            console.log("Draw");
+        } else {
+            console.log("User wins");
+        }
+    } else if (computerPlay === 3) {
+        if (playType == "paper" || playType == "spock") {
+            console.log("Computer Wins!");
+        } else if (playType == "lizard") {
+            console.log("Draw");
+        } else {
+            console.log("User wins");
+        }
+    } else if (computerPlay === 4) {
+        if (playType == "rock" || playType == "scissors") {
+            console.log("Computer Wins!");
+        } else if (playType == "spock") {
+            console.log("Draw");
+        } else {
+            console.log("User wins");
+        }
     }
-   }    
 }
+
 
 /* 
 * Checks if either score is at 10 and declares a winner
