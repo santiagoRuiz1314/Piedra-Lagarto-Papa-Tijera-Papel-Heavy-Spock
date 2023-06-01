@@ -7,7 +7,6 @@ startButton.addEventListener("click",function() {
         document.getElementById('computer-image').innerText = "Waiting for player";
      }
      ,1000);
-     runGame();
 })
 
 /* Set-up event listeners for the 5 player choice options
@@ -23,26 +22,31 @@ let spockButton = document.getElementById("spock");
 rockButton.addEventListener("click",function() {
     playerChoice('rock');
     computerChoice();
+    runGame();
 })
 
 paperButton.addEventListener("click",function() {
     playerChoice('paper');
     computerChoice();
+    runGame();
 })
 
 scissorsButton.addEventListener("click",function() {
     playerChoice('scissors');
     computerChoice();
+    runGame();
 })
 
 lizardButton.addEventListener("click",function() {
     playerChoice('lizard');
     computerChoice();
+    runGame();
 })
 
 spockButton.addEventListener("click",function() {
     playerChoice('spock');
     computerChoice();
+    runGame();
 })
 
 /*
@@ -54,18 +58,23 @@ function playerChoice(playType) {
     switch (playType) {
         case "rock":
             document.getElementById('player-image').style.background="url(/assets/images/Rock.png)";
+            console.log("player picks rock");
             break;
         case "paper":
             document.getElementById('player-image').style.background="url(/assets/images/Paper.png)";
+            console.log("player picks paper");
             break;
         case "scissors":
             document.getElementById('player-image').style.background="url(/assets/images/Scissors.png)";
+            console.log("player picks scissors");
             break; 
         case "lizard":
             document.getElementById('player-image').style.background="url(/assets/images/Lizard.png)";
+            console.log("player picks lizard");
             break;
         case "spock":
             document.getElementById('player-image').style.background="url(/assets/images/Spock.png)";
+            console.log("player picks spock");
             break;
     }
   }
@@ -78,26 +87,46 @@ function playerChoice(playType) {
 
 function computerChoice() {
     
-    let computerChoice = Math.floor(Math.random() * 5)
-    console.log(computerChoice);
+    let computerPlay = Math.floor(Math.random() * 5)
    
-    switch (computerChoice) {
-        case "0":
+    switch (computerPlay) {
+        case 0:
             document.getElementById('computer-image').style.background="url(/assets/images/Rock.png)";
+            console.log("computer picks rock");
             break;
-        case "1":
+        case 1:
+            console.log("computer picks paper");
             document.getElementById('computer-image').style.background="url(/assets/images/Paper.png)";
             break;
-        case "2":
+        case 2:
             document.getElementById('computer-image').style.background="url(/assets/images/Scissors.png)";
+            console.log("computer picks scissors");
             break; 
-        case "3":
+        case 3:
             document.getElementById('computer-image').style.background="url(/assets/images/Lizard.png)";
+            console.log("computer picks lizard");
             break;
-        case "4":
+        case 4:
             document.getElementById('computer-image').style.background="url(/assets/images/Spock.png)";
+            console.log("computer picks spock");
             break;
     }
+}
+
+// main game function loop 
+
+function runGame(computerPlay) {
+    console.log("Game running");
+
+   if (computerPlay === 0) {
+    if (playType == "paper") {
+        console.log("User Wins!");
+    } else if (playType == "rock") {
+        console.log("Draw");
+    } else {
+        console.log("Computer wins");
+    }
+   }    
 }
 
 /* 
@@ -118,22 +147,3 @@ function scores() {
 
     }
 }
-
-// main game function loop 
-
-function runGame(playType) {
-    var result;
-
-   if (computerChoice == 0) {
-    if (playType == "paper" || playtype == "spock") {
-        console.log("userWins");
-    } else if (playType == "rock") {
-        result = draw;
-    } else {
-        result = computerWins;
-    }
-   }
-
-    
-}
-
