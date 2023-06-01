@@ -119,7 +119,7 @@ function runGame(computerPlay) {
     console.log("Game running");
 
    if (computerPlay === 0) {
-    if (playType == "paper") {
+    if (playType == "paper" || playType == "spock") {
         console.log("User Wins!");
     } else if (playType == "rock") {
         console.log("Draw");
@@ -140,7 +140,7 @@ function scores() {
     let cScore = document.getElementById("cScore")
    
     if (pScore || cScore < 10) {
-        //declare winner or round]
+        //declare winner or round
     } else if (pScore === 10){
 
     } else {
