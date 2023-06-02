@@ -1,7 +1,7 @@
-// start button 
-
 var computerPlay;
-var playType;
+
+// start button 
+// need to lock out rest of game here until button has been clicked
 
 let startButton = document.getElementById("start")
 
@@ -13,7 +13,7 @@ startButton.addEventListener("click",function() {
 })
 
 /* Set-up event listeners for the 5 player choice options
-* and run playerChoice function when clicked
+* and games functions when clicked
 */
 
 let rockButton = document.getElementById("rock");
@@ -62,22 +62,27 @@ function playerChoice(playType) {
         case "rock":
             document.getElementById('player-image').style.background="url(/assets/images/Rock.png)";
             console.log("player picks rock");
+            var pType = "rock";
             break;
         case "paper":
             document.getElementById('player-image').style.background="url(/assets/images/Paper.png)";
             console.log("player picks paper");
+            var pType = "paper";
             break;
         case "scissors":
             document.getElementById('player-image').style.background="url(/assets/images/Scissors.png)";
             console.log("player picks scissors");
+            var pType = "scissors";
             break; 
         case "lizard":
             document.getElementById('player-image').style.background="url(/assets/images/Lizard.png)";
             console.log("player picks lizard");
+            var pType = "lizard";
             break;
         case "spock":
             document.getElementById('player-image').style.background="url(/assets/images/Spock.png)";
             console.log("player picks spock");
+            var pType = "spock";
             break;
     }
   }
@@ -120,43 +125,44 @@ function computerChoice() {
 
 function runGame() {
     console.log(computerPlay);
+    console.log(pType);
 
    if (computerPlay === 0) {
-        if (playType == "paper" || playType == "spock") {
+        if (pType == "paper" || pType == "spock") {
         console.log("Computer wins!");
-        } else if (playType == "rock") {
+        } else if (pType == "rock") {
         console.log("Draw");
         } else {
         console.log("User wins");
         }
     } else if (computerPlay === 1) {
-        if (playType == "rock" || playType == "spock") {
+        if (pType == "rock" || pType == "spock") {
         console.log("Computer wins!");
-         } else if (playType == "paper") {
+         } else if (pType == "paper") {
         console.log("Draw");
         } else {
         console.log("User wins");
         }
     } else if (computerPlay === 2) {
-        if (playType == "paper" || playType == "lizard") {
+        if (pType == "paper" || pType == "lizard") {
             console.log("Computer Wins!");
-        } else if (playType == "scissors") {
+        } else if (pType == "scissors") {
             console.log("Draw");
         } else {
             console.log("User wins");
         }
     } else if (computerPlay === 3) {
-        if (playType == "paper" || playType == "spock") {
+        if (pType == "paper" || pType == "spock") {
             console.log("Computer Wins!");
-        } else if (playType == "lizard") {
+        } else if (pType == "lizard") {
             console.log("Draw");
         } else {
             console.log("User wins");
         }
     } else if (computerPlay === 4) {
-        if (playType == "rock" || playType == "scissors") {
+        if (pType == "rock" || pType == "scissors") {
             console.log("Computer Wins!");
-        } else if (playType == "spock") {
+        } else if (pType == "spock") {
             console.log("Draw");
         } else {
             console.log("User wins");
