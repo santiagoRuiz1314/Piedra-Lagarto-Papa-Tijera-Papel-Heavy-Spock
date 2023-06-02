@@ -19,6 +19,11 @@ p {
 
 /* Choose area styling */
 
+#start-button {
+    display: flex;
+    justify-content: center;
+}
+
 #choose-area, #game-area, #score-area {
     display: flex;
     justify-content: center;
@@ -93,7 +98,6 @@ p {
 
 
 #rule-button {
-    margin: auto;
     display: flex;
     justify-content: center;
 }

@@ -123,49 +123,61 @@ function computerChoice() {
 
 // main game function loop 
 
+// issues with playType being carried through functions
+
 function runGame() {
     console.log(computerPlay);
     console.log(pType);
 
    if (computerPlay === 0) {
         if (pType == "paper" || pType == "spock") {
-        console.log("Computer wins!");
+            console.log("Computer wins!");
+            computerScore();
         } else if (pType == "rock") {
-        console.log("Draw");
+            console.log("Draw");
         } else {
-        console.log("User wins");
+            console.log("User wins");
+            playScore();
         }
     } else if (computerPlay === 1) {
         if (pType == "rock" || pType == "spock") {
-        console.log("Computer wins!");
+            console.log("Computer wins!");
+            computerScore();
          } else if (pType == "paper") {
-        console.log("Draw");
+            console.log("Draw");
         } else {
-        console.log("User wins");
+            console.log("User wins");
+            playScore();
         }
     } else if (computerPlay === 2) {
         if (pType == "paper" || pType == "lizard") {
             console.log("Computer Wins!");
+            computerScore();
         } else if (pType == "scissors") {
             console.log("Draw");
         } else {
             console.log("User wins");
+            playScore();
         }
     } else if (computerPlay === 3) {
         if (pType == "paper" || pType == "spock") {
             console.log("Computer Wins!");
+            computerScore();
         } else if (pType == "lizard") {
             console.log("Draw");
         } else {
             console.log("User wins");
+            playScore();
         }
     } else if (computerPlay === 4) {
         if (pType == "rock" || pType == "scissors") {
             console.log("Computer Wins!");
+            computerScore();
         } else if (pType == "spock") {
             console.log("Draw");
         } else {
             console.log("User wins");
+            playScore();
         }
     }
 }
@@ -177,15 +189,23 @@ function runGame() {
 * and updates score counter
 */
 
-function scores() {
-    let pScore = document.getElementById("pScore")
-    let cScore = document.getElementById("cScore")
+function playScore() {
+    let pOldScore = document.getElementById("pScore").innerText;
+    document.getElementById("pScore").innerText = ++pOldScore;
+    console.log('pScore');
+}
+
+function computerScore() {
+    let cOldScore = document.getElementById("cScore").innerText;
+    document.getElementById("cScore").innerText = ++cOldScore;
+    console.log("cScore");
+}
    
-    if (pScore || cScore < 10) {
+/* if (pScore || cScore < 10) {
         //declare winner or round
     } else if (pScore === 10){
 
     } else {
 
     }
-}
+*/
