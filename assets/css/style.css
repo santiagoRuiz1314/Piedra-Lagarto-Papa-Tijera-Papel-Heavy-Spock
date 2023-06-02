@@ -19,9 +19,20 @@ p {
 
 /* Choose area styling */
 
-#start-button {
+#button-container {
     display: flex;
     justify-content: center;
+    margin: auto;
+}
+
+#start-button {
+    margin: 5px;
+    display: inline-block;
+}
+
+#rule-button {
+    margin: 5px;
+    display: inline-block;
 }
 
 #choose-area, #game-area, #score-area {
@@ -34,40 +45,65 @@ p {
     background: url(/assets/images/Rock.png) no-repeat center center;
     height: 160px;
     width: 160px;
-    border-radius: 80px;
     margin: 5px;
+    border: none;
+}
+
+#rock:hover {
+    border-radius: 80px;
+    border: 5px solid #7F3333;
 }
 
 #paper {
     background: url(/assets/images/Paper.png) no-repeat center center;
     height: 160px;
     width: 160px;
-    border-radius: 80px;
     margin: 5px;
+    border: none;
+}
+
+#paper:hover {
+    border-radius: 80px;
+    border: 5px solid #f49536;
 }
 
 #scissors {
     background: url(/assets/images/Scissors.png) no-repeat center center;
     height: 160px;
     width: 160px;
-    border-radius: 80px;
     margin: 5px;
+    border: none;
+}
+
+#scissors:hover {
+    border-radius: 80px;
+    border: 5px solid #16537E;
 }
 
 #lizard {
     background: url(/assets/images/Lizard.png) no-repeat center center;
     height: 160px;
     width: 160px;
-    border-radius: 80px;
     margin: 5px;
+    border: none;
+}
+
+#lizard:hover {
+    border-radius: 80px;
+    border: 5px solid #38761D;
 }
 
 #spock {
     background: url(/assets/images/Spock.png) no-repeat center center;
     height: 160px;
     width: 160px;
-    border-radius: 80px;
     margin: 5px;
+    border: none;
+}
+
+#spock:hover {
+    border-radius: 80px;
+    border: 5px solid #6FA8DC;
 }
 
 /* Game area syling */
@@ -97,10 +133,7 @@ p {
 
 
 
-#rule-button {
-    display: flex;
-    justify-content: center;
-}
+
 
 #rules {
     background: url(/assets/images/game_rules.png) no-repeat center center;
