@@ -11,7 +11,7 @@
     <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
     <p>First to 10 wins!</p>
     <div id="score-area">
-        <span class="score">Your score:</span>
+        <span class="score">Player score:</span>
         <span id="pScore"> 0 </span>
         <span class="score">Computer score:</span> 
         <span id="cScore"> 0 </span>
@@ -46,13 +46,19 @@
         <button class="button" id="spock"></button>
     </div>
 </div>
-<div id="game-area">
-    <div id="player-image" >You</div>
-    <div id="result">Result</div>
-    <div id="computer-image">Computer</div>
+<div id="result">
+    <p>Result will go here</p>
 </div>
-
-
+<div id="game-area">
+    <div class="game-container">
+        <p>Player</p>
+        <div id="player-image" ></div>
+    </div>
+    <div class="game-container">
+        <p>Computer</p>
+        <div id="computer-image"></div>
+    </div>
+</div>
     
 
     <footer>Footer</footer>

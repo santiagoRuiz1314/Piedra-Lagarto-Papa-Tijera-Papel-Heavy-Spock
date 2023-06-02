@@ -118,20 +118,30 @@ a {
 
 /* Game area syling */
 
-#game-area > div {
-    height: 160px;
-    width: 160px;
+#result > p {
     text-align: center;
+    height: 50px;
+}
+
+.game-container > p {
+    text-align: center;
+    margin: 0;
 }
 
 #player-image {
     border: 2px solid black;
     border-radius: 80px;
+    margin: 0 10px 0 10px;
+    height: 160px;
+    width: 160px;
 }
 
 #computer-image {
     border: 2px solid black;
     border-radius: 80px;
+    margin: 0 10px 0 10px;
+    height: 160px;
+    width: 160px;
 }
 
 /* Score counter styling */
