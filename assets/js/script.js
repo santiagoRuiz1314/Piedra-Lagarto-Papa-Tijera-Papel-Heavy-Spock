@@ -257,14 +257,71 @@ function resultMsg (resultType) {
         case "draw":
             document.getElementById("result").innerText = "Its a draw - go again!"; 
             break; 
+
         case "rockPaper":
-            document.getElementById("result").innerText = "Paper covers rock - player wins";
+            document.getElementById("result").innerText = "Paper covers rock - player wins!";
             break;
         case "rockSpock":
-            document.getElementById("result").innerText = "Spock vaporizes rock - player wins";
+            document.getElementById("result").innerText = "Spock vaporizes rock - player wins!";
             break;
-        case ""
+        case "rockLizard":
+            document.getElementById("result").innerText = "Rock crushes lizard - computer wins!";
+            break;
+        case "rockScissors":
+            document.getElementById("result").innerText = "Rock crushes scissors - computer wins!";
+            break;
 
+        case "paperRock":
+            document.getElementById("result").innerText = "Paper covers rock - computer wins!";
+            break;
+        case "paperScissors":
+            document.getElementById("result").innerText = "Scissors cut paper - player wins!";
+            break;
+        case "paperLizard":
+            document.getElementById("result").innerText = "Lizard eats paper - player wins!";
+            break;
+        case "paperSpock":
+            document.getElementById("result").innerText = "Paper disproves spock - computer wins!";
+            break;
+
+        case "scissorsRock":
+            document.getElementById("result").innerText = "Rock crushes scissors - player wins!";
+            break;
+        case "scissorsPaper":
+            document.getElementById("result").innerText = "Scissors cut paper - computer wins!";
+            break;
+        case "scissorsLizard":
+            document.getElementById("result").innerText = "Scissors decapitates lizard - computer wins!";
+            break;
+        case "scissorsSpock":
+            document.getElementById("result").innerText = "Spock smashes scissors - player wins!";
+            break;
+
+        case "lizardRock":
+            document.getElementById("result").innerText = "Rock crushes lizard - player wins!";
+            break;
+        case "lizardPaper":
+            document.getElementById("result").innerText = "Lizard eats paper - computer wins!";
+            break;
+        case "lizardScissors":
+            document.getElementById("result").innerText = "Scissors decapitates lizard - player wins!";
+            break;
+        case "lizardSpock":
+            document.getElementById("result").innerText = "Lizard poisons spock - computer wins!";
+            break;
+
+        case "spockRock":
+            document.getElementById("result").innerText = "Spock vaporizes rock - computer wins!";
+            break;
+        case "spockPaper":
+            document.getElementById("result").innerText = "Paper disproves spock - player wins!";
+            break;
+        case "spockScissors":
+            document.getElementById("result").innerText = "Spock smashes scissors - computer wins!";
+            break;
+        case "spockLizard":
+            document.getElementById("result").innerText = "Lizard poisons spock - player wins!";
+            break;
     }
 }
 
