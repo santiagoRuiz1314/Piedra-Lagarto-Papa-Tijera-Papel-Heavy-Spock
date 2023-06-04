@@ -5,16 +5,19 @@
 h1 {
     font-family: 'Orbitron', sans-serif;
     text-align: center;
+    padding: 10px;
 }
 
 body {
     font-family: 'Prompt', sans-serif;
+    background: #e1e1e1;
 }
 
 body > p {
-    width: 350px;
+    width: 75%;
     text-align: center;
     margin: auto;
+    padding: 10px;
 }
 
 a {
@@ -43,12 +46,14 @@ a {
 #choose-area, #game-area, #score-area {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     margin: 20px 0 20px 0;
 }
 
 .selection {
     text-align: center;
     margin: 0;
+    width: 170px;
 }
 
 #rock {
@@ -56,11 +61,11 @@ a {
     height: 160px;
     width: 160px;
     margin: 5px;
+    border-radius: 80px;
     border: none;
 }
 
 #rock:hover {
-    border-radius: 80px;
     border: 5px solid #7F3333;
 }
 
@@ -69,11 +74,11 @@ a {
     height: 160px;
     width: 160px;
     margin: 5px;
+    border-radius: 80px;
     border: none;
 }
 
 #paper:hover {
-    border-radius: 80px;
     border: 5px solid #f49536;
 }
 
@@ -82,11 +87,11 @@ a {
     height: 160px;
     width: 160px;
     margin: 5px;
+    border-radius: 80px;
     border: none;
 }
 
 #scissors:hover {
-    border-radius: 80px;
     border: 5px solid #16537E;
 }
 
@@ -95,11 +100,11 @@ a {
     height: 160px;
     width: 160px;
     margin: 5px;
+    border-radius: 80px;
     border: none;
 }
 
 #lizard:hover {
-    border-radius: 80px;
     border: 5px solid #38761D;
 }
 
@@ -108,19 +113,28 @@ a {
     height: 160px;
     width: 160px;
     margin: 5px;
+    border-radius: 80px;
     border: none;
 }
 
 #spock:hover {
-    border-radius: 80px;
     border: 5px solid #6FA8DC;
 }
 
 /* Game area syling */
 
+#result {
+    display: flex;
+    justify-content: center;
+}
+
 #result > p {
     text-align: center;
-    height: 50px;
+    height: auto;
+    width: 75%;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 10px;
 }
 
 .game-container > p {
@@ -150,12 +164,70 @@ a {
     margin: 0 5px 0 20px;
 }
 
-
-
-
-
+/* rules page styling */
 
 #rules {
-    background: url(/assets/images/game_rules.png) no-repeat center center;
-    height: 600px;
+    text-align: center;
+}
+
+/* screen size styling for less than 550px break-point */
+
+@media screen and (max-width: 550px) {
+
+    body > p {
+        width: 75%;
+    }
+
+    .selection {
+        width: 170px;
+    }
+
+    #rock {
+        background: url(/assets/images/Rock.png) no-repeat center center;
+        height: 160px;
+        width: 160px;
+        border-radius: 80px;
+    }
+    
+    #paper {
+        background: url(/assets/images/Paper.png) no-repeat center center;
+        height: 160px;
+        width: 160px;
+        border-radius: 80px;
+    }
+    
+    #scissors {
+        background: url(/assets/images/Scissors.png) no-repeat center center;
+        height: 160px;
+        width: 160px;
+        border-radius: 80px;
+    }
+    
+    #lizard {
+        background: url(/assets/images/Lizard.png) no-repeat center center;
+        height: 160px;
+        width: 160px;
+        border-radius: 80px;
+    }
+    
+    #spock {
+        background: url(/assets/images/Spock.png) no-repeat center center;
+        height: 160px;
+        width: 160px;
+        border-radius: 80px;
+    }
+
+    #result > p {
+        width: 75%;
+    }
+
+    #player-image {
+        height: 160px;
+        width: 160px;
+    }
+    
+    #computer-image {
+        height: 160px;
+        width: 160px;
+    }
 }
