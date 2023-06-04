@@ -146,7 +146,7 @@ function runGame() {
             console.log("Computer wins");
             computerScore();
             resultMsg("rockLizard");
-        } else (pType == "scissors") {
+        } else {
             console.log("Computer wins");
             computerScore(); 
             resultMsg("rockScissors");
@@ -169,7 +169,7 @@ function runGame() {
             console.log("Player wins");
             playerScore();
             resultMsg("paperLizard");
-        } else (pType == "scissors") {
+        } else {
             console.log("Player wins");
             playerScore(); 
             resultMsg("paperScissors");
@@ -193,7 +193,7 @@ function runGame() {
             console.log("Computer wins");
             computerScore();
             resultMsg("scissorsLizard");
-        } else (pType == "scissors") {
+        } else {
             console.log("Draw");
             resultMsg("draw");
         } 
@@ -215,7 +215,7 @@ function runGame() {
         } else if (pType == "lizard") {
             console.log("Draw");
             resultMsg("draw");
-        } else (pType == "scissors") {
+        } else {
             console.log("Player wins!");
             playerScore();
             resultMsg("lizardScissors");
@@ -238,7 +238,7 @@ function runGame() {
             console.log("Player wins!");
             playerScore();
             resultMsg("spockLizard");
-        } else (pType == "scissors") {
+        } else {
             console.log("Computer wins!");
             computerScore();
             resultMsg("spockScissors");
