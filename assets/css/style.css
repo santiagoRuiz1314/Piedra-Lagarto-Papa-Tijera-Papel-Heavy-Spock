@@ -57,7 +57,7 @@ a {
 }
 
 #rock {
-    background: url(/assets/images/Rock.png) no-repeat center center;
+    background: url(/assets/images/Rock.png) no-repeat center center cover;
     height: 160px;
     width: 160px;
     margin: 5px;
@@ -70,7 +70,7 @@ a {
 }
 
 #paper {
-    background: url(/assets/images/Paper.png) no-repeat center center;
+    background: url(/assets/images/Paper.png) no-repeat center center cover;
     height: 160px;
     width: 160px;
     margin: 5px;
@@ -83,7 +83,7 @@ a {
 }
 
 #scissors {
-    background: url(/assets/images/Scissors.png) no-repeat center center;
+    background: url(/assets/images/Scissors.png) no-repeat center center cover;
     height: 160px;
     width: 160px;
     margin: 5px;
@@ -96,7 +96,7 @@ a {
 }
 
 #lizard {
-    background: url(/assets/images/Lizard.png) no-repeat center center;
+    background: url(/assets/images/Lizard.png) no-repeat center center cover;
     height: 160px;
     width: 160px;
     margin: 5px;
@@ -109,7 +109,7 @@ a {
 }
 
 #spock {
-    background: url(/assets/images/Spock.png) no-repeat center center;
+    background: url(/assets/images/Spock.png) no-repeat center center cover;
     height: 160px;
     width: 160px;
     margin: 5px;
@@ -131,7 +131,7 @@ a {
 #result > p {
     text-align: center;
     height: auto;
-    width: 75%;
+    width: 500px;
     border: 2px solid black;
     border-radius: 5px;
     padding: 10px;
@@ -183,42 +183,37 @@ a {
     }
 
     #rock {
-        background: url(/assets/images/Rock.png) no-repeat center center;
-        height: 160px;
-        width: 160px;
-        border-radius: 80px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
     }
     
     #paper {
-        background: url(/assets/images/Paper.png) no-repeat center center;
-        height: 160px;
-        width: 160px;
-        border-radius: 80px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
     }
     
     #scissors {
-        background: url(/assets/images/Scissors.png) no-repeat center center;
-        height: 160px;
-        width: 160px;
-        border-radius: 80px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
     }
     
     #lizard {
-        background: url(/assets/images/Lizard.png) no-repeat center center;
-        height: 160px;
-        width: 160px;
-        border-radius: 80px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
     }
     
     #spock {
-        background: url(/assets/images/Spock.png) no-repeat center center;
-        height: 160px;
-        width: 160px;
-        border-radius: 80px;
+        height: 100px;
+        width: 100px;
+        border-radius: 50px;
     }
 
     #result > p {
-        width: 75%;
+        width: 90%;
     }
 
     #player-image {
