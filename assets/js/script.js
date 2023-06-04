@@ -99,22 +99,27 @@ function computerChoice() {
    
     switch (computerPlay) {
         case 0:
+            document.getElementById('computer-image').innerText = "";
             document.getElementById('computer-image').style.background="url(/assets/images/Rock.png) no-repeat center center";
             console.log("computer picks rock");
             break;
         case 1:
-            console.log("computer picks paper");
+            document.getElementById('computer-image').innerText = "";
             document.getElementById('computer-image').style.background="url(/assets/images/Paper.png) no-repeat center center";
+            console.log("computer picks paper");
             break;
         case 2:
+            document.getElementById('computer-image').innerText = "";
             document.getElementById('computer-image').style.background="url(/assets/images/Scissors.png) no-repeat center center";
             console.log("computer picks scissors");
             break; 
         case 3:
+            document.getElementById('computer-image').innerText = "";    
             document.getElementById('computer-image').style.background="url(/assets/images/Lizard.png) no-repeat center center";
             console.log("computer picks lizard");
             break;
         case 4:
+            document.getElementById('computer-image').innerText = "";
             document.getElementById('computer-image').style.background="url(/assets/images/Spock.png) no-repeat center center";
             console.log("computer picks spock");
             break;
