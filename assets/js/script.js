@@ -60,27 +60,27 @@ spockButton.addEventListener("click",function() {
 function playerChoice(playType) {
     switch (playType) {
         case "rock":
-            document.getElementById('player-image').style.background="url(/assets/images/Rock.png)";
+            document.getElementById('player-image').style.background="url(/assets/images/Rock.png) no-repeat center center";
             console.log("player picks rock");
             var pType = "rock";
             break;
         case "paper":
-            document.getElementById('player-image').style.background="url(/assets/images/Paper.png)";
+            document.getElementById('player-image').style.background="url(/assets/images/Paper.png) no-repeat center center";
             console.log("player picks paper");
             var pType = "paper";
             break;
         case "scissors":
-            document.getElementById('player-image').style.background="url(/assets/images/Scissors.png)";
+            document.getElementById('player-image').style.background="url(/assets/images/Scissors.png) no-repeat center center";
             console.log("player picks scissors");
             var pType = "scissors";
             break; 
         case "lizard":
-            document.getElementById('player-image').style.background="url(/assets/images/Lizard.png)";
+            document.getElementById('player-image').style.background="url(/assets/images/Lizard.png) no-repeat center center";
             console.log("player picks lizard");
             var pType = "lizard";
             break;
         case "spock":
-            document.getElementById('player-image').style.background="url(/assets/images/Spock.png)";
+            document.getElementById('player-image').style.background="url(/assets/images/Spock.png) no-repeat center center";
             console.log("player picks spock");
             var pType = "spock";
             break;
@@ -99,23 +99,23 @@ function computerChoice() {
    
     switch (computerPlay) {
         case 0:
-            document.getElementById('computer-image').style.background="url(/assets/images/Rock.png)";
+            document.getElementById('computer-image').style.background="url(/assets/images/Rock.png) no-repeat center center";
             console.log("computer picks rock");
             break;
         case 1:
             console.log("computer picks paper");
-            document.getElementById('computer-image').style.background="url(/assets/images/Paper.png)";
+            document.getElementById('computer-image').style.background="url(/assets/images/Paper.png) no-repeat center center";
             break;
         case 2:
-            document.getElementById('computer-image').style.background="url(/assets/images/Scissors.png)";
+            document.getElementById('computer-image').style.background="url(/assets/images/Scissors.png) no-repeat center center";
             console.log("computer picks scissors");
             break; 
         case 3:
-            document.getElementById('computer-image').style.background="url(/assets/images/Lizard.png)";
+            document.getElementById('computer-image').style.background="url(/assets/images/Lizard.png) no-repeat center center";
             console.log("computer picks lizard");
             break;
         case 4:
-            document.getElementById('computer-image').style.background="url(/assets/images/Spock.png)";
+            document.getElementById('computer-image').style.background="url(/assets/images/Spock.png) no-repeat center center";
             console.log("computer picks spock");
             break;
     }
