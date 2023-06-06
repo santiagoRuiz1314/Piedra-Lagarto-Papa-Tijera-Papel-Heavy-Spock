@@ -25,31 +25,31 @@ let spockButton = document.getElementById("spock");
 rockButton.addEventListener("click",function() {
     playerChoice('rock');
     computerChoice();
-    runGame();
+    runGame('rock');
 })
 
 paperButton.addEventListener("click",function() {
     playerChoice('paper');
     computerChoice();
-    runGame();
+    runGame('paper');
 })
 
 scissorsButton.addEventListener("click",function() {
     playerChoice('scissors');
     computerChoice();
-    runGame();
+    runGame('scissors');
 })
 
 lizardButton.addEventListener("click",function() {
     playerChoice('lizard');
     computerChoice();
-    runGame();
+    runGame('lizard');
 })
 
 spockButton.addEventListener("click",function() {
     playerChoice('spock');
     computerChoice();
-    runGame();
+    runGame('spock');
 })
 
 /*
@@ -62,27 +62,22 @@ function playerChoice(playType) {
         case "rock":
             document.getElementById('player-image').style.background="url(/assets/images/Rock.png) no-repeat center center";
             console.log("player picks rock");
-            var pType = "rock";
             break;
         case "paper":
             document.getElementById('player-image').style.background="url(/assets/images/Paper.png) no-repeat center center";
             console.log("player picks paper");
-            var pType = "paper";
             break;
         case "scissors":
             document.getElementById('player-image').style.background="url(/assets/images/Scissors.png) no-repeat center center";
             console.log("player picks scissors");
-            var pType = "scissors";
             break; 
         case "lizard":
             document.getElementById('player-image').style.background="url(/assets/images/Lizard.png) no-repeat center center";
             console.log("player picks lizard");
-            var pType = "lizard";
             break;
         case "spock":
             document.getElementById('player-image').style.background="url(/assets/images/Spock.png) no-repeat center center";
             console.log("player picks spock");
-            var pType = "spock";
             break;
     }
   }
@@ -130,24 +125,24 @@ function computerChoice() {
 
 // issues with playType being carried through functions
 
-function runGame() {
+function runGame(playType) {
     console.log(computerPlay);
-    console.log(pType);
+    console.log(playType);
 
     switch (computerPlay){
     case 0:
-        if (pType == "paper") {
+        if (playType == "paper") {
             console.log("User wins!");
-            playScore();
+            playerScore();
             resultMsg("rockPaper");
-        } else if (pType == "spock") {
+        } else if (playType == "spock") {
             console.log("User wins!");
-            playScore();
+            playerScore();
             resultMsg("rockSpock");
-        } else if (pType == "rock") {
+        } else if (playType == "rock") {
             console.log("Draw");
             resultMsg("draw");
-        } else if (pType == "lizard") {
+        } else if (playType == "lizard") {
             console.log("Computer wins");
             computerScore();
             resultMsg("rockLizard");
@@ -159,18 +154,18 @@ function runGame() {
         break;
         
     case 1:
-        if (pType == "paper") {
+        if (playType == "paper") {
             console.log("Draw");
             resultMsg("draw");
-        } else if (pType == "spock") {
+        } else if (playType == "spock") {
             console.log("Computer wins!");
             computerScore();
             resultMsg("paperSpock");
-        } else if (pType == "rock") {
+        } else if (playType == "rock") {
             console.log("Computer wins!");
             computerScore();
             resultMsg("paperRock");
-        } else if (pType == "lizard") {
+        } else if (playType == "lizard") {
             console.log("Player wins");
             playerScore();
             resultMsg("paperLizard");
@@ -182,19 +177,19 @@ function runGame() {
         break;
 
     case 2:
-        if (pType == "paper") {
+        if (playType == "paper") {
             console.log("Computer wins!");
             computerScore();
             resultMsg("scissorsPaper");
-        } else if (pType == "spock") {
+        } else if (playType == "spock") {
             console.log("Player wins!");
             playerScore();
             resultMsg("scissorsSpock");
-        } else if (pType == "rock") {
+        } else if (playType == "rock") {
             console.log("Player wins!");
             playerScore();
             resultMsg("scissorsRock");
-        } else if (pType == "lizard") {
+        } else if (playType == "lizard") {
             console.log("Computer wins");
             computerScore();
             resultMsg("scissorsLizard");
@@ -205,19 +200,19 @@ function runGame() {
         break;
 
     case 3:
-        if (pType == "paper") {
+        if (playType == "paper") {
             console.log("Computer wins!");
             computerScore();
             resultMsg("lizardPaper");
-        } else if (pType == "spock") {
+        } else if (playType == "spock") {
             console.log("Computer wins!");
             computerScore();
             resultMsg("lizardSpock");
-        } else if (pType == "rock") {
+        } else if (playType == "rock") {
             console.log("Player wins!");
             playerScore();
             resultMsg("lizardRock");
-        } else if (pType == "lizard") {
+        } else if (playType == "lizard") {
             console.log("Draw");
             resultMsg("draw");
         } else {
@@ -228,18 +223,18 @@ function runGame() {
         break;
 
     case 4:
-        if (pType == "paper") {
+        if (playType == "paper") {
             console.log("Player wins!");
             playerScore();
             resultMsg("spockPaper");
-        } else if (pType == "spock") {
+        } else if (playType == "spock") {
             console.log("Draw");
             resultMsg("draw");
-        } else if (pType == "rock") {
+        } else if (playType == "rock") {
             console.log("Computer wins!");
             computerScore();
             resultMsg("spockRock");
-        } else if (pType == "lizard") {
+        } else if (playType == "lizard") {
             console.log("Player wins!");
             playerScore();
             resultMsg("spockLizard");
@@ -254,7 +249,7 @@ function runGame() {
 
 /*
 * Takes outcome from runGame and displays 
-* the correct results message for the game
+* the correct results message for that round
 */
 
 function resultMsg (resultType) {
@@ -337,7 +332,7 @@ function resultMsg (resultType) {
 * and updates score counter
 */
 
-function playScore() {
+function playerScore() {
     let pOldScore = document.getElementById("pScore").innerText;
     document.getElementById("pScore").innerText = ++pOldScore;
     console.log('pScore');
