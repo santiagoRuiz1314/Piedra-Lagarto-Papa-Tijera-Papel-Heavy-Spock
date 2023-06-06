@@ -36,11 +36,13 @@ a {
 #start-button {
     margin: 5px;
     display: inline-block;
+    cursor: pointer;
 }
 
 #rule-button {
     margin: 5px;
     display: inline-block;
+    cursor: pointer;
 }
 
 #choose-area, #game-area, #score-area {
@@ -79,6 +81,7 @@ a {
     margin: 5px;
     border-radius: 80px;
     border: none;
+    cursor: pointer;
 }
 
 #paper:hover {
@@ -93,6 +96,7 @@ a {
     margin: 5px;
     border-radius: 80px;
     border: none;
+    cursor: pointer;
 }
 
 #scissors:hover {
@@ -107,6 +111,7 @@ a {
     margin: 5px;
     border-radius: 80px;
     border: none;
+    cursor: pointer;
 }
 
 #lizard:hover {
@@ -121,6 +126,7 @@ a {
     margin: 5px;
     border-radius: 80px;
     border: none;
+    cursor: pointer;
 }
 
 #spock:hover {
