@@ -19,8 +19,6 @@ startButton.addEventListener("click",function() {
 * and games functions when clicked
 */
 
-if (start == 1) {
-
 let rockButton = document.getElementById("rock");
 let paperButton = document.getElementById("paper");
 let scissorsButton = document.getElementById("scissors");
@@ -56,9 +54,6 @@ spockButton.addEventListener("click",function() {
     computerChoice();
     runGame('spock');
 })
-} else {
-    document.getElementById('computer-image').innerText = "";
-}
 
 /*
 * Feeds correct image into player selection area based 
@@ -273,72 +268,93 @@ function runGame(playType) {
 function resultMsg (resultType) {
     switch (resultType){
         case "draw":
-            document.getElementById("result").innerText = "Its a draw - go again!"; 
+            document.getElementById("result-para").innerText = "Its a draw - go again!";
+            document.getElementById("result-para").style.borderColor = "#6FA8DC";
             break; 
 
         case "rockPaper":
-            document.getElementById("result").innerText = "Paper covers rock - player wins!";
+            document.getElementById("result-para").innerText = "Paper covers rock - player wins!";
+            document.getElementById("result-para").style.borderColor = "green";
             break;
         case "rockSpock":
-            document.getElementById("result").innerText = "Spock vaporizes rock - player wins!";
+            document.getElementById("result-para").innerText = "Spock vaporizes rock - player wins!";
+            document.getElementById("result-para").style.borderColor = "green";
             break;
         case "rockLizard":
-            document.getElementById("result").innerText = "Rock crushes lizard - computer wins!";
+            document.getElementById("result-para").innerText = "Rock crushes lizard - computer wins!";
+            document.getElementById("result-para").style.borderColor = "red";
             break;
         case "rockScissors":
-            document.getElementById("result").innerText = "Rock crushes scissors - computer wins!";
+            document.getElementById("result-para").innerText = "Rock crushes scissors - computer wins!";
+            document.getElementById("result-para").style.borderColor = "red";
             break;
 
         case "paperRock":
-            document.getElementById("result").innerText = "Paper covers rock - computer wins!";
+            document.getElementById("result-para").innerText = "Paper covers rock - computer wins!";
+            document.getElementById("result-para").style.borderColor = "red";
             break;
         case "paperScissors":
-            document.getElementById("result").innerText = "Scissors cut paper - player wins!";
+            document.getElementById("result-para").innerText = "Scissors cut paper - player wins!";
+            document.getElementById("result-para").style.borderColor = "green";
             break;
         case "paperLizard":
-            document.getElementById("result").innerText = "Lizard eats paper - player wins!";
+            document.getElementById("result-para").innerText = "Lizard eats paper - player wins!";
+            document.getElementById("result-para").style.borderColor = "green";
             break;
         case "paperSpock":
-            document.getElementById("result").innerText = "Paper disproves spock - computer wins!";
+            document.getElementById("result-para").innerText = "Paper disproves spock - computer wins!";
+            document.getElementById("result-para").style.borderColor = "red";
             break;
 
         case "scissorsRock":
-            document.getElementById("result").innerText = "Rock crushes scissors - player wins!";
+            document.getElementById("result-para").innerText = "Rock crushes scissors - player wins!";
+            document.getElementById("result-para").style.borderColor = "green";
             break;
         case "scissorsPaper":
-            document.getElementById("result").innerText = "Scissors cut paper - computer wins!";
+            document.getElementById("result-para").innerText = "Scissors cut paper - computer wins!";
+            document.getElementById("result-para").style.borderColor = "red";
             break;
         case "scissorsLizard":
-            document.getElementById("result").innerText = "Scissors decapitates lizard - computer wins!";
+            document.getElementById("result-para").innerText = "Scissors decapitates lizard - computer wins!";
+            document.getElementById("result-para").style.borderColor = "red";
             break;
         case "scissorsSpock":
-            document.getElementById("result").innerText = "Spock smashes scissors - player wins!";
+            document.getElementById("result-para").innerText = "Spock smashes scissors - player wins!";
+            document.getElementById("result-para").style.borderColor = "green";
             break;
 
         case "lizardRock":
-            document.getElementById("result").innerText = "Rock crushes lizard - player wins!";
+            document.getElementById("result-para").innerText = "Rock crushes lizard - player wins!";
+            document.getElementById("result-para").style.borderColor = "green";
             break;
         case "lizardPaper":
-            document.getElementById("result").innerText = "Lizard eats paper - computer wins!";
+            document.getElementById("result-para").innerText = "Lizard eats paper - computer wins!";
+            document.getElementById("result-para").style.borderColor = "red";
             break;
         case "lizardScissors":
-            document.getElementById("result").innerText = "Scissors decapitates lizard - player wins!";
+            document.getElementById("result-para").innerText = "Scissors decapitates lizard - player wins!";
+            document.getElementById("result-para").style.borderColor = "green";
             break;
         case "lizardSpock":
-            document.getElementById("result").innerText = "Lizard poisons spock - computer wins!";
+            document.getElementById("result-para").innerText = "Lizard poisons spock - computer wins!";
+            document.getElementById("result-para").style.borderColor = "red";
             break;
 
         case "spockRock":
-            document.getElementById("result").innerText = "Spock vaporizes rock - computer wins!";
+            document.getElementById("result-para").innerText = "Spock vaporizes rock - computer wins!";
+            document.getElementById("result-para").style.borderColor = "red";
             break;
         case "spockPaper":
-            document.getElementById("result").innerText = "Paper disproves spock - player wins!";
+            document.getElementById("result-para").innerText = "Paper disproves spock - player wins!";
+            document.getElementById("result-para").style.borderColor = "green";
             break;
         case "spockScissors":
-            document.getElementById("result").innerText = "Spock smashes scissors - computer wins!";
+            document.getElementById("result-para").innerText = "Spock smashes scissors - computer wins!";
+            document.getElementById("result-para").style.borderColor = "red";
             break;
         case "spockLizard":
-            document.getElementById("result").innerText = "Lizard poisons spock - player wins!";
+            document.getElementById("result-para").innerText = "Lizard poisons spock - player wins!";
+            document.getElementById("result-para").style.borderColor = "green";
             break;
     }
 }
