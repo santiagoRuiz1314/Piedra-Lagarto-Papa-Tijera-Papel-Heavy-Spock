@@ -9,6 +9,9 @@ let startButton = document.getElementById("start")
 startButton.addEventListener("click",function() {
     start = 1;
     console.log(start)
+    document.getElementById("player-image").style.background = ""
+    document.getElementById("computer-image").style.background = ""
+
     setTimeout(()=> {
         document.getElementById('computer-image').innerText = "Waiting for player";
      }
