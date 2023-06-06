@@ -149,7 +149,6 @@ a {
 
 #player-image {
     border: 2px solid black;
-    background-size: cover;
     border-radius: 80px;
     margin: 0 10px 0 10px;
     height: 160px;
@@ -162,7 +161,6 @@ a {
     align-content: center;
     justify-content: center;
     border: 2px solid black;
-    background-size: cover;
     border-radius: 80px;
     margin: 0 10px 0 10px;
     height: 160px;

@@ -60,23 +60,28 @@ spockButton.addEventListener("click",function() {
 function playerChoice(playType) {
     switch (playType) {
         case "rock":
-            document.getElementById('player-image').style.background="url(/assets/images/Rock.png) no-repeat center center";
+            document.getElementById('player-image').style.background="url(/assets/images/Rock.png)";
+            document.getElementById('player-image').style.backgroundSize="cover";
             console.log("player picks rock");
             break;
         case "paper":
-            document.getElementById('player-image').style.background="url(/assets/images/Paper.png) no-repeat center center";
+            document.getElementById('player-image').style.background="url(/assets/images/Paper.png)";
+            document.getElementById('player-image').style.backgroundSize="cover";
             console.log("player picks paper");
             break;
         case "scissors":
-            document.getElementById('player-image').style.background="url(/assets/images/Scissors.png) no-repeat center center";
+            document.getElementById('player-image').style.background="url(/assets/images/Scissors.png)";
+            document.getElementById('player-image').style.backgroundSize="cover";
             console.log("player picks scissors");
             break; 
         case "lizard":
-            document.getElementById('player-image').style.background="url(/assets/images/Lizard.png) no-repeat center center";
+            document.getElementById('player-image').style.background="url(/assets/images/Lizard.png)";
+            document.getElementById('player-image').style.backgroundSize="cover";
             console.log("player picks lizard");
             break;
         case "spock":
-            document.getElementById('player-image').style.background="url(/assets/images/Spock.png) no-repeat center center";
+            document.getElementById('player-image').style.background="url(/assets/images/Spock.png)";
+            document.getElementById('player-image').style.backgroundSize="cover";
             console.log("player picks spock");
             break;
     }
@@ -95,27 +100,32 @@ function computerChoice() {
     switch (computerPlay) {
         case 0:
             document.getElementById('computer-image').innerText = "";
-            document.getElementById('computer-image').style.background="url(/assets/images/Rock.png) no-repeat center center";
+            document.getElementById('computer-image').style.background="url(/assets/images/Rock.png)";
+            document.getElementById('computer-image').style.backgroundSize="cover";
             console.log("computer picks rock");
             break;
         case 1:
             document.getElementById('computer-image').innerText = "";
-            document.getElementById('computer-image').style.background="url(/assets/images/Paper.png) no-repeat center center";
+            document.getElementById('computer-image').style.background="url(/assets/images/Paper.png)";
+            document.getElementById('computer-image').style.backgroundSize="cover";
             console.log("computer picks paper");
             break;
         case 2:
             document.getElementById('computer-image').innerText = "";
-            document.getElementById('computer-image').style.background="url(/assets/images/Scissors.png) no-repeat center center";
+            document.getElementById('computer-image').style.background="url(/assets/images/Scissors.png)";
+            document.getElementById('computer-image').style.backgroundSize="cover";
             console.log("computer picks scissors");
             break; 
         case 3:
             document.getElementById('computer-image').innerText = "";    
-            document.getElementById('computer-image').style.background="url(/assets/images/Lizard.png) no-repeat center center";
+            document.getElementById('computer-image').style.background="url(/assets/images/Lizard.png)";
+            document.getElementById('computer-image').style.backgroundSize="cover";
             console.log("computer picks lizard");
             break;
         case 4:
             document.getElementById('computer-image').innerText = "";
-            document.getElementById('computer-image').style.background="url(/assets/images/Spock.png) no-repeat center center";
+            document.getElementById('computer-image').style.background="url(/assets/images/Spock.png)";
+            document.getElementById('computer-image').style.backgroundSize="cover";
             console.log("computer picks spock");
             break;
     }
