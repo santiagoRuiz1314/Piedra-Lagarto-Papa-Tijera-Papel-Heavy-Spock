@@ -36,6 +36,9 @@ a {
 #start-button {
     margin: 5px;
     display: inline-block;
+}
+
+#start {
     cursor: pointer;
 }
 

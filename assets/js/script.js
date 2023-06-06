@@ -1,4 +1,5 @@
 var computerPlay;
+var start = 0
 
 // start button 
 // need to lock out rest of game here until button has been clicked
@@ -6,7 +7,8 @@ var computerPlay;
 let startButton = document.getElementById("start")
 
 startButton.addEventListener("click",function() {
-    startButton == 1;
+    start = 1;
+    console.log(start)
     setTimeout(()=> {
         document.getElementById('computer-image').innerText = "Waiting for player";
      }
@@ -17,8 +19,14 @@ startButton.addEventListener("click",function() {
 * and games functions when clicked
 */
 
+if (start == 1) {
 
-if (startButton == 1) {
+let rockButton = document.getElementById("rock");
+let paperButton = document.getElementById("paper");
+let scissorsButton = document.getElementById("scissors");
+let lizardButton = document.getElementById("lizard");
+let spockButton = document.getElementById("spock");
+
 rockButton.addEventListener("click",function() {
     playerChoice('rock');
     computerChoice();
@@ -48,7 +56,10 @@ spockButton.addEventListener("click",function() {
     computerChoice();
     runGame('spock');
 })
+} else {
+    document.getElementById('computer-image').innerText = "";
 }
+
 /*
 * Feeds correct image into player selection area based 
 * on what is clicked
