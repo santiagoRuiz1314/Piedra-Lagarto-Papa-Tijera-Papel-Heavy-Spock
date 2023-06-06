@@ -64,6 +64,7 @@ a {
     margin: 5px;
     border-radius: 80px;
     border: none;
+    cursor: pointer;
 }
 
 #rock:hover {

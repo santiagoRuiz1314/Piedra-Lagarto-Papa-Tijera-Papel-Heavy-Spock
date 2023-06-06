@@ -6,22 +6,19 @@ var computerPlay;
 let startButton = document.getElementById("start")
 
 startButton.addEventListener("click",function() {
+    startButton == 1;
     setTimeout(()=> {
         document.getElementById('computer-image').innerText = "Waiting for player";
      }
-     ,1000);
+     ,500);
 })
 
 /* Set-up event listeners for the 5 player choice options
 * and games functions when clicked
 */
 
-let rockButton = document.getElementById("rock");
-let scissorsButton = document.getElementById("scissors");
-let paperButton = document.getElementById("paper");
-let lizardButton = document.getElementById("lizard");
-let spockButton = document.getElementById("spock");
 
+if (startButton == 1) {
 rockButton.addEventListener("click",function() {
     playerChoice('rock');
     computerChoice();
@@ -51,7 +48,7 @@ spockButton.addEventListener("click",function() {
     computerChoice();
     runGame('spock');
 })
-
+}
 /*
 * Feeds correct image into player selection area based 
 * on what is clicked
