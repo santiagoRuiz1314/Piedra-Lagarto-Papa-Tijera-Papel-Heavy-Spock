@@ -157,6 +157,10 @@ a {
 }
 
 #computer-image {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
     border: 2px solid black;
     background-size: cover;
     border-radius: 80px;
