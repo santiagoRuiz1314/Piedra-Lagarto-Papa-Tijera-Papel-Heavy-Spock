@@ -1,5 +1,9 @@
 var computerPlay;
-var start = 0
+var start = 0;
+console.log(start);
+
+// Hides quit button - revealed once start button has been clicked
+document.getElementById("quit").style.display = "none"
 
 // start button 
 // need to lock out rest of game here until button has been clicked
@@ -11,11 +15,21 @@ startButton.addEventListener("click",function() {
     console.log(start)
     document.getElementById("player-image").style.background = ""
     document.getElementById("computer-image").style.background = ""
+    document.getElementById("quit").style.display = ""
+    document.getElementById("start").style.display = "none"
 
     setTimeout(()=> {
         document.getElementById('computer-image').innerText = "Waiting for player";
      }
      ,500);
+})
+
+// Quit button event listener
+
+let quitButton = document.getElementById("quit")
+
+quitButton.addEventListener("click", function() {
+    location.reload()
 })
 
 /* Set-up event listeners for the 5 player choice options
@@ -28,6 +42,7 @@ let scissorsButton = document.getElementById("scissors");
 let lizardButton = document.getElementById("lizard");
 let spockButton = document.getElementById("spock");
 
+if (start === 1) {
 rockButton.addEventListener("click",function() {
     playerChoice('rock');
     computerChoice();
@@ -57,7 +72,7 @@ spockButton.addEventListener("click",function() {
     computerChoice();
     runGame('spock');
 })
-
+}
 /*
 * Feeds correct image into player selection area based 
 * on what is clicked
@@ -365,8 +380,7 @@ function resultMsg (resultType) {
 
 /* 
 * Checks if either score is at 10 and declares a winner
-* If score hasn't reached 10, declares winner for the round
-* and updates score counter
+* If score hasn't reached 10, updates score counter
 */
 
 function playerScore() {
