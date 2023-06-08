@@ -240,6 +240,17 @@ At the tablet size, iPad air and iPad mini both have one of the choice buttons o
 At the desktop size, the game fits without any issues. All 5 player choice buttons fit across the screen and the game looks balanced and centralised. 
 
 ### Code Validation
+Using W3C Markup validation the code has been checked for errors with the following results:
+
+HTML, Game page (index.html): 
+- 1 error: button element must not be within an anchor element 
+- This error was addressed by setting up a "Rule button" event listener and using JavaScript code (window.open) to open a new tab with the rules page when the button is clicked.
+
+HTML, Rules page (rules.html): 
+- 1 error: bad attribute using height 600px with img element. 
+
+CSS, (style.css):
+- No errors reported 
 
 # Bugs
 1. Upon publishing the site with GitHub it was clear that relative pathways were not working and caused a problem with loading the images on the website. This was easily fixed by updating all the file pathways to absolute. 
@@ -257,11 +268,17 @@ Live site: https://tr94.github.io/rock-paper-scissors-lizard-spock/
 # Credits 
 
 ## Media:
+- Rules page game diagram taken from: https://www.momonhg.com/blog/rock-paper-scissors-lizard-and-spock-game
+- Rock, Paper, Scissors, Lizard and Spock images taken from: https://github.com/topics/rock-paper-scissors-lizard-spock?l=html
 
 ## Words: 
-
-P words: https://the-big-bang-theory.com/rock-paper-scissors-lizard-spock/
+Rules page words taken directly from: https://the-big-bang-theory.com/rock-paper-scissors-lizard-spock/
 
 ## Code:
+- setTimeOut function was taken from W3Schools online reference 
+- location.reload function was taken from W3Schools online reference 
+- window.open method for making a button a hyperlink was taken from online site "Codex World, How to Open URL in New Tab using JavaScript"
 
-Acknowledgements:
+## Acknowledgements:
+Thank you to the tutor support at Code Institute for helping me with the different types of variables and how to pass them through functions
+Thank you to my mentor for their help in guiding the project, technical code advice and improvement suggestions

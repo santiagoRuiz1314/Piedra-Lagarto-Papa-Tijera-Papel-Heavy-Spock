@@ -7,7 +7,7 @@ document.getElementById("quit").style.display = "none";
 document.getElementById("reset").style.display = "none";
 
 // Start button event listener
-let startButton = document.getElementById("start")
+let startButton = document.getElementById("start");
 
 startButton.addEventListener("click",function() {
     start = 1;
@@ -17,24 +17,33 @@ startButton.addEventListener("click",function() {
     document.getElementById("start").style.display = "none";
     document.getElementById("result-para").innerText = "Make your choice using the buttons above and see the result here";
 
+    // setTimeOut function taken from W3Schools
     setTimeout(()=> {
         document.getElementById('computer-image').innerText = "Waiting for player";
-     }
-     ,500);
-})
+     },500);
+});
 
 // Quit button event listener
-let quitButton = document.getElementById("quit")
+// location.reload function taken from W3Schools
+let quitButton = document.getElementById("quit");
 
 quitButton.addEventListener("click", function() {
     location.reload();
-})
+});
 
 // Reset button event listener
-let resetButton = document.getElementById("reset")
+let resetButton = document.getElementById("reset");
 
 resetButton.addEventListener("click", function() {
     location.reload();
+});
+
+// Rules button event listener
+// window.open function taken from Codex World online reference
+let rulesButton = document.getElementById("rules");
+
+rulesButton.addEventListener("click", function() {
+    window.open('../rules.html', '_blank');
 })
 
 /* Set-up event listeners for the 5 player choice options
@@ -52,7 +61,7 @@ rockButton.addEventListener("click",function() {
     computerChoice();
     runGame('rock');
     }
-})
+});
 
 paperButton.addEventListener("click",function() {
     if (start ===1){
@@ -60,7 +69,7 @@ paperButton.addEventListener("click",function() {
     computerChoice();
     runGame('paper');
     }
-})
+});
 
 scissorsButton.addEventListener("click",function() {
     if (start ===1){
@@ -68,7 +77,7 @@ scissorsButton.addEventListener("click",function() {
     computerChoice();
     runGame('scissors');
     }
-})
+});
 
 lizardButton.addEventListener("click",function() {
     if (start ===1){
@@ -76,7 +85,7 @@ lizardButton.addEventListener("click",function() {
     computerChoice();
     runGame('lizard');
     }
-})
+});
 
 spockButton.addEventListener("click",function() {
     if (start ===1){
@@ -84,7 +93,7 @@ spockButton.addEventListener("click",function() {
     computerChoice();
     runGame('spock');
     }
-})
+});
 
 /*
 * Feeds correct image into player selection area based 
@@ -350,7 +359,6 @@ function resultMsg (resultType) {
             break;
     }
 }
-
 
 /* 
 * Checks if either score is at 10 and declares a winner
