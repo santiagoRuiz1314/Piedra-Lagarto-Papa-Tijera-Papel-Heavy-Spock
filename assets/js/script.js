@@ -94,23 +94,23 @@ spockButton.addEventListener("click",function() {
 function playerChoice(playType) {
     switch (playType) {
         case "rock":
-            document.getElementById('player-image').style.background="url(../images/Rock.png)";
+            document.getElementById('player-image').style.background="url(assets/images/Rock.png)";
             document.getElementById('player-image').style.backgroundSize="cover";
             break;
         case "paper":
-            document.getElementById('player-image').style.background="url(../images/Paper.png)";
+            document.getElementById('player-image').style.background="url(assets/images/Paper.png)";
             document.getElementById('player-image').style.backgroundSize="cover";
             break;
         case "scissors":
-            document.getElementById('player-image').style.background="url(../images/Scissors.png)";
+            document.getElementById('player-image').style.background="url(assets/images/Scissors.png)";
             document.getElementById('player-image').style.backgroundSize="cover";
             break; 
         case "lizard":
-            document.getElementById('player-image').style.background="url(../images/Lizard.png)";
+            document.getElementById('player-image').style.background="url(assets/images/Lizard.png)";
             document.getElementById('player-image').style.backgroundSize="cover";
             break;
         case "spock":
-            document.getElementById('player-image').style.background="url(../images/Spock.png)";
+            document.getElementById('player-image').style.background="url(assets/images/Spock.png)";
             document.getElementById('player-image').style.backgroundSize="cover";
             break;
     }
@@ -129,27 +129,27 @@ function computerChoice() {
     switch (computerPlay) {
         case 0:
             document.getElementById('computer-image').innerText = "";
-            document.getElementById('computer-image').style.background="url(../images/Rock.png)";
+            document.getElementById('computer-image').style.background="url(assets/images/Rock.png)";
             document.getElementById('computer-image').style.backgroundSize="cover";
             break;
         case 1:
             document.getElementById('computer-image').innerText = "";
-            document.getElementById('computer-image').style.background="url(../images/Paper.png)";
+            document.getElementById('computer-image').style.background="url(assets/images/Paper.png)";
             document.getElementById('computer-image').style.backgroundSize="cover";
             break;
         case 2:
             document.getElementById('computer-image').innerText = "";
-            document.getElementById('computer-image').style.background="url(../images/Scissors.png)";
+            document.getElementById('computer-image').style.background="url(assets/images/Scissors.png)";
             document.getElementById('computer-image').style.backgroundSize="cover";
             break; 
         case 3:
             document.getElementById('computer-image').innerText = "";    
-            document.getElementById('computer-image').style.background="url(../images/Lizard.png)";
+            document.getElementById('computer-image').style.background="url(assets/images/Lizard.png)";
             document.getElementById('computer-image').style.backgroundSize="cover";
             break;
         case 4:
             document.getElementById('computer-image').innerText = "";
-            document.getElementById('computer-image').style.background="url(../images/Spock.png)";
+            document.getElementById('computer-image').style.background="url(assets/images/Spock.png)";
             document.getElementById('computer-image').style.backgroundSize="cover";
             break;
     }
