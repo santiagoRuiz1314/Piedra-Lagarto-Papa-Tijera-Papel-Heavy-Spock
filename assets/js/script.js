@@ -11,7 +11,6 @@ let startButton = document.getElementById("start")
 
 startButton.addEventListener("click",function() {
     start = 1;
-    console.log(start);
     document.getElementById("player-image").style.background = "";
     document.getElementById("computer-image").style.background = "";
     document.getElementById("quit").style.display = "";
@@ -97,27 +96,22 @@ function playerChoice(playType) {
         case "rock":
             document.getElementById('player-image').style.background="url(/assets/images/Rock.png)";
             document.getElementById('player-image').style.backgroundSize="cover";
-            console.log("player picks rock");
             break;
         case "paper":
             document.getElementById('player-image').style.background="url(/assets/images/Paper.png)";
             document.getElementById('player-image').style.backgroundSize="cover";
-            console.log("player picks paper");
             break;
         case "scissors":
             document.getElementById('player-image').style.background="url(/assets/images/Scissors.png)";
             document.getElementById('player-image').style.backgroundSize="cover";
-            console.log("player picks scissors");
             break; 
         case "lizard":
             document.getElementById('player-image').style.background="url(/assets/images/Lizard.png)";
             document.getElementById('player-image').style.backgroundSize="cover";
-            console.log("player picks lizard");
             break;
         case "spock":
             document.getElementById('player-image').style.background="url(/assets/images/Spock.png)";
             document.getElementById('player-image').style.backgroundSize="cover";
-            console.log("player picks spock");
             break;
     }
   }
@@ -137,31 +131,26 @@ function computerChoice() {
             document.getElementById('computer-image').innerText = "";
             document.getElementById('computer-image').style.background="url(/assets/images/Rock.png)";
             document.getElementById('computer-image').style.backgroundSize="cover";
-            console.log("computer picks rock");
             break;
         case 1:
             document.getElementById('computer-image').innerText = "";
             document.getElementById('computer-image').style.background="url(/assets/images/Paper.png)";
             document.getElementById('computer-image').style.backgroundSize="cover";
-            console.log("computer picks paper");
             break;
         case 2:
             document.getElementById('computer-image').innerText = "";
             document.getElementById('computer-image').style.background="url(/assets/images/Scissors.png)";
             document.getElementById('computer-image').style.backgroundSize="cover";
-            console.log("computer picks scissors");
             break; 
         case 3:
             document.getElementById('computer-image').innerText = "";    
             document.getElementById('computer-image').style.background="url(/assets/images/Lizard.png)";
             document.getElementById('computer-image').style.backgroundSize="cover";
-            console.log("computer picks lizard");
             break;
         case 4:
             document.getElementById('computer-image').innerText = "";
             document.getElementById('computer-image').style.background="url(/assets/images/Spock.png)";
             document.getElementById('computer-image').style.backgroundSize="cover";
-            console.log("computer picks spock");
             break;
     }
 }
@@ -169,28 +158,21 @@ function computerChoice() {
 // Main game function loop 
 
 function runGame(playType) {
-    console.log(computerPlay);
-    console.log(playType);
 
     switch (computerPlay){
     case 0:
         if (playType == "paper") {
-            console.log("User wins!");
             resultMsg("rockPaper");
             playerScore();
         } else if (playType == "spock") {
-            console.log("User wins!");
             resultMsg("rockSpock");
             playerScore();
         } else if (playType == "rock") {
-            console.log("Draw");
             resultMsg("draw");
         } else if (playType == "lizard") {
-            console.log("Computer wins");
             resultMsg("rockLizard");
             computerScore();
         } else {
-            console.log("Computer wins");
             resultMsg("rockScissors");
             computerScore();
         } 
@@ -198,22 +180,17 @@ function runGame(playType) {
         
     case 1:
         if (playType == "paper") {
-            console.log("Draw");
             resultMsg("draw");
         } else if (playType == "spock") {
-            console.log("Computer wins!");
             resultMsg("paperSpock");
             computerScore();
         } else if (playType == "rock") {
-            console.log("Computer wins!");
             resultMsg("paperRock");
             computerScore();
         } else if (playType == "lizard") {
-            console.log("Player wins");
             resultMsg("paperLizard");
             playerScore();
         } else {
-            console.log("Player wins");
             resultMsg("paperScissors");
             playerScore(); 
         } 
@@ -221,45 +198,35 @@ function runGame(playType) {
 
     case 2:
         if (playType == "paper") {
-            console.log("Computer wins!");
             resultMsg("scissorsPaper");
             computerScore();
         } else if (playType == "spock") {
-            console.log("Player wins!");
             resultMsg("scissorsSpock");
             playerScore();
         } else if (playType == "rock") {
-            console.log("Player wins!");
             resultMsg("scissorsRock");
             playerScore();
         } else if (playType == "lizard") {
-            console.log("Computer wins");
             resultMsg("scissorsLizard");
             computerScore();
         } else {
-            console.log("Draw");
             resultMsg("draw");
         } 
         break;
 
     case 3:
         if (playType == "paper") {
-            console.log("Computer wins!");
             resultMsg("lizardPaper");
             computerScore();
         } else if (playType == "spock") {
-            console.log("Computer wins!");
             resultMsg("lizardSpock");
             computerScore();
         } else if (playType == "rock") {
-            console.log("Player wins!");
             resultMsg("lizardRock");
             playerScore();
         } else if (playType == "lizard") {
-            console.log("Draw");
             resultMsg("draw");
         } else {
-            console.log("Player wins!");
             resultMsg("lizardScissors");
             playerScore();
         } 
@@ -267,22 +234,17 @@ function runGame(playType) {
 
     case 4:
         if (playType == "paper") {
-            console.log("Player wins!");
             resultMsg("spockPaper");
             playerScore();
         } else if (playType == "spock") {
-            console.log("Draw");
             resultMsg("draw");
         } else if (playType == "rock") {
-            console.log("Computer wins!");
             resultMsg("spockRock");
             computerScore();
         } else if (playType == "lizard") {
-            console.log("Player wins!");
             resultMsg("spockLizard");
             playerScore();
         } else {
-            console.log("Computer wins!");
             resultMsg("spockScissors");
             computerScore();
         } 
@@ -400,7 +362,6 @@ function playerScore() {
 
     if (pScore <=9) {
         document.getElementById("pScore").innerText = ++pScore;
-        console.log(playerScore);
     } else {
         document.getElementById("result-para").innerText = "Player wins! Click Reset to play again.";
         document.getElementById("result-para").style.backgroundColor = "green";
@@ -417,7 +378,6 @@ function computerScore() {
 
     if (cScore <=9) {   
     document.getElementById("cScore").innerText = ++cScore;
-    console.log(computerScore);
     } else {
         document.getElementById("result-para").innerText = "Unlucky! Computer wins! Click Reset to play again.";
         document.getElementById("result-para").style.backgroundColor = "red";
