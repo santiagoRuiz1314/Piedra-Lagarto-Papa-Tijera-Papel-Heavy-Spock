@@ -1,21 +1,22 @@
+// Stating global variables 
 var computerPlay;
 var start = 0;
 
-// Hides quit button - revealed once start button has been clicked
-document.getElementById("quit").style.display = "none"
+// Hides quit button and reset button
+document.getElementById("quit").style.display = "none";
+document.getElementById("reset").style.display = "none";
 
-// start button 
-// need to lock out rest of game here until button has been clicked
-
+// Start button event listener
 let startButton = document.getElementById("start")
 
 startButton.addEventListener("click",function() {
     start = 1;
-    console.log(start)
-    document.getElementById("player-image").style.background = ""
-    document.getElementById("computer-image").style.background = ""
-    document.getElementById("quit").style.display = ""
-    document.getElementById("start").style.display = "none"
+    console.log(start);
+    document.getElementById("player-image").style.background = "";
+    document.getElementById("computer-image").style.background = "";
+    document.getElementById("quit").style.display = "";
+    document.getElementById("start").style.display = "none";
+    document.getElementById("result-para").innerText = "Make your choice using the buttons above and see the result here";
 
     setTimeout(()=> {
         document.getElementById('computer-image').innerText = "Waiting for player";
@@ -24,17 +25,22 @@ startButton.addEventListener("click",function() {
 })
 
 // Quit button event listener
-
 let quitButton = document.getElementById("quit")
 
 quitButton.addEventListener("click", function() {
-    location.reload()
+    location.reload();
+})
+
+// Reset button event listener
+let resetButton = document.getElementById("reset")
+
+resetButton.addEventListener("click", function() {
+    location.reload();
 })
 
 /* Set-up event listeners for the 5 player choice options
-* and games functions when clicked
+* and run functions when clicked
 */
-
 let rockButton = document.getElementById("rock");
 let paperButton = document.getElementById("paper");
 let scissorsButton = document.getElementById("scissors");
@@ -124,7 +130,7 @@ function playerChoice(playType) {
 
 function computerChoice() {
     
-    computerPlay = Math.floor(Math.random() * 5)
+    computerPlay = Math.floor(Math.random() * 5);
    
     switch (computerPlay) {
         case 0:
@@ -160,9 +166,7 @@ function computerChoice() {
     }
 }
 
-// main game function loop 
-
-// issues with playType being carried through functions
+// Main game function loop 
 
 function runGame(playType) {
     console.log(computerPlay);
@@ -398,10 +402,13 @@ function playerScore() {
         document.getElementById("pScore").innerText = ++pScore;
         console.log(playerScore);
     } else {
-        document.getElementById("result-para").innerText = "Player wins! Click Start to play again.";
+        document.getElementById("result-para").innerText = "Player wins! Click Reset to play again.";
         document.getElementById("result-para").style.backgroundColor = "green";
         document.getElementById("result-para").style.color = "white";
-        // add in start button lock out here
+        document.getElementById("reset").style.display = "";
+        document.getElementById("quit").style.display = "none";
+        document.getElementById("start").style.display = "none";
+        start = 0;
     }
 }
 
@@ -412,9 +419,12 @@ function computerScore() {
     document.getElementById("cScore").innerText = ++cScore;
     console.log(computerScore);
     } else {
-        document.getElementById("result-para").innerText = "Unlucky! Computer wins! Click Start to play again.";
+        document.getElementById("result-para").innerText = "Unlucky! Computer wins! Click Reset to play again.";
         document.getElementById("result-para").style.backgroundColor = "red";
         document.getElementById("result-para").style.color = "white";
-        // add in start button lock out here
+        document.getElementById("reset").style.display = "";
+        document.getElementById("quit").style.display = "none";
+        document.getElementById("start").style.display = "none";
+        start = 0;
     }
 }

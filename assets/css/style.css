@@ -33,12 +33,12 @@ a {
     margin: auto;
 }
 
-#start-button, #quit-button {
+#start-button, #quit-button, #reset-button {
     margin: 5px;
     display: inline-block;
 }
 
-#start, #quit {
+#start, #quit, #reset {
     cursor: pointer;
 }
 
