@@ -230,6 +230,17 @@ Game reset:
 Quit during game play:
 - Upon clicking the quit button, game starts again from the beginning
 
+### Responsiveness 
+Using Google Chrome Dev Tools, the responsiveness of the site can be tested through multiple view ports (device emulator). 
+
+Testing was carried out using the following mobile devices; iPhone SE, iPhone XR, Pixel 5 and S20 Ultra. At the mobile screen size the game fits onto the screen without having to scroll to reach buttons. The buttons are smaller for screens less than 550px wide to ensure the game fits appropriately.
+
+At the tablet size, iPad air and iPad mini both have one of the choice buttons on a new row. This isn't a functional problem but aesthetically does look a little unbalanced and could be address with another media query at a viewport size of around 850px. 
+
+At the desktop size, the game fits without any issues. All 5 player choice buttons fit across the screen and the game looks balanced and centralised. 
+
+### Code Validation
+
 # Bugs
 1. Upon publishing the site with GitHub it was clear that relative pathways were not working and caused a problem with loading the images on the website. This was easily fixed by updating all the file pathways to absolute. 
 
@@ -243,14 +254,14 @@ This project was developed using Code Anywhere and all updates were committed to
 
 Live site: https://tr94.github.io/rock-paper-scissors-lizard-spock/
 
-## Credits 
+# Credits 
 
-### Media:
+## Media:
 
-### Words: 
+## Words: 
 
 P words: https://the-big-bang-theory.com/rock-paper-scissors-lizard-spock/
 
-### Code:
+## Code:
 
 Acknowledgements:
