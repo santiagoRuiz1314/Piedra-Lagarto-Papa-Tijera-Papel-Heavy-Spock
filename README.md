@@ -99,12 +99,34 @@ The imagery for this website has been kept deliberately simple to not distract f
 
 The icon for the tab title mirrors this using a hand "fist" just like you're playing face to face with your opponent. The icon was sourced from Font Awesome.
 
+# Features: 
+The game page has been split into several sections which has distinct purposes. See image below for diagram:
+![Explanation of Rock, Paper, Scissors, Lizard, Spock game area](/assets/readMe-images/RPSLS_markup.png)
 
+Button area:
+This has 4 buttons in total however they are displayed at different points within the game. 
+- Rules: The "rules" button is always on show and this links to a new tab page displaying the rules. 
+- Start: "Start" has to be clicked by the player before the game can start. The reset of the game functionality is locked until this button is clicked.
+- Quit: Once the "start" button has been clicked it disappears and is replaced with a "quit" button. This is clicked if the player wants to end the game and it resets the game. 
+- Reset: Once the game has been played out and one of the players has reached 10 wins the game will declare the winner. At this point the "quit" button will disappear and be replaced with a "reset" button which also resets the game.
 
-## Features: 
+Choice area: 
+This area is "unlocked" once the "start" button has been clicked. The player can then make their choice for the round by clicking on their desired image. The cursor changes to indicate a clickable link and when hovering over any of the images a border colour is added to make the choice clear and interative. 
 
+Results / Feedback area:
+This provides instructions and feedback to the player. 
+Upon loading the game the instruction is provided to click the "start" button. 
+Once the "start" button is clicked, the instruction is provided to make a choice using the 5 image buttons. 
+As soon as the first choice is made this area then becomes feedback on the results of each round such as "rock smashes scissors - player wins!"
+When one of the players reaches 10 the box colour fills red or green and declares the final winner with an instruction to click the "reset" button. 
 
-Technologies used:
+Game area:
+The area where the head to head gaming happens. The player and computer choices are displayed here next to each other for each round. 
+
+Score counter area: 
+The scores are kept in a simple counter in this area. 
+
+# Technologies used:
 
 Coding languages used: 
 
