@@ -128,13 +128,33 @@ The scores are kept in a simple counter in this area.
 
 # Technologies used:
 
-Coding languages used: 
+## Coding languages used: 
 
 HTML5
 CCS3
 Java Script
 
-External resources: 
+## External resources: 
+
+Google Fonts: “Orbitron” and “Prompt” fonts imported externally into the CSS file. These are the only two fonts used in the project.
+
+Font Joy:
+Suggested the pairings of “Orbitron” title font with a suitable body text font which was "Prompt”.
+
+Font Awesome:
+Single "fist" icon linked into the HTML file for the tab title.
+
+Am I Responsive?:
+Used to test out how friendly the site is across various screen sizes. The responsive nature of the site is shown at the top of this document in the mock-up.
+
+Balsamiq:
+Simple wireframing to draft out the basic structure of the pages before commiting to coding.
+
+Git-Hub / Code Anywhere:
+Git-hub is used to store the project files and is used to host the site. Code Anywhere was used as the IDE to code the website.
+
+Google Web Developer Tools:
+Google Chrome was used as the browser for the development of this website game. The inbuilt Developer Tools were utilised to understand the HTML, CSS and Java Script workings in real-time.
 
 # Accessibility: 
 
