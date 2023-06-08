@@ -70,7 +70,7 @@ A game area for the user to interact with:
 - Clear instructions will be given on how to operate the game, pseudo styling will indicate action to the user. 
 A goal for the user to work towards:
 - First to 10 wins is the clear goal for this game
-A score counter for the user to being to track against the goal:
+A score counter for the user to track against the goal:
 - Score counter included at the bottom of the page to keep track against the goal
 Feedback for the result of each round:
 - "Win or Lose" box will display the result of each round such as "paper covers rock".
@@ -159,16 +159,83 @@ Google Chrome was used as the browser for the development of this website game. 
 # Accessibility: 
 
 Considering how to make a website is accessible to all users should be high on the list of priorities during development. For this site the following aspects have been incorporated:
-Alt labels on the images/buttons
-Aria label on the “rules page” link 
+- Aria labels for the 3 game buttons (start, quit, reset)
+- Aria labels on the 5 game choice buttons
+- Aria label on the “rules page” link stating it opens in a new tab
 
 Within Google Developer tools, Lighthouse is a way of measuring the accessibility of a website. For this site the report shows as below:
 
 ![Lighthouse scores for Rock, Paper, Scissors, Lizard, Spock game](/assets/readMe-images/RPSLS_lighthouse.png)
 
 # Testing
+The testing process is a key part of the development of any website. Before initial release the testing phase ensures the code is robust and will deliver the intended user experience. 
+
+## User Goals
+The user goals were set-up at the start of development during the Strategy phase and reviewed again during the Skeleton phase. The content requirements have been reviewed against the finished website: 
+
+A reminder of the rules of the game:
+- The "Rules" button gives players the option to navigate to a seperate page if they need a reminder of the game rules.
+A game area for the user to interact with:
+- Interaction points are intuitive for the player using the standard convention of a cursor change when hovering over clickable elements.
+- The game choice buttons also have a border colour which is activated when the player hovers over the specific image.
+- Instructions are given in the centre of the page which make it clear what is expected of the player at various stages in the game.
+A goal for the user to work towards:
+- The goal of "First to 10 wins" is clearly stated at the top of the page
+- The game has been set-up to finish after one of the players reaches 10 wins
+A score counter for the user to track against the goal:
+- At the bottom of the page there is a simple counter that clearly displays the scores during the game
+Feedback for the result of each round:
+- The box in the centre of the page gives instructions showing the player what they need to do
+- This box also gives an appropriate message depending on the result of each round
+- Another message is displayed once the game has finished - one player has reached 10 wins.
+
+## Manual Testing
+### Functionality testing:
+Landing page:
+- Page is being displayed as expected 
+- Quit button and Reset button are hidden as expected
+- Initial instruction to click the start button displayed as expected 
+- Game area is blank as expected
+- Scores are both reading 0
+
+Start button clicked:
+- Start button is replaced with Quit button 
+- Instruction changes, displaying correct message 
+- Game area displaying message in "Computer" choice area with appropriate timer delay 
+
+Game begins with player making first selection, for this instance Player chooses rock, Computer chooses spock:
+- Correct message is displayed with correct border colour 
+- Correct images are displayed in the game area
+- Computer wins and therefore computer score is raised to 1
+
+Player makes next selection, for this instance Player chooses scissors, Computer chooses scissors:
+- Draw message displayed with correct border color
+- Correct images are dispalted in the game area
+- Neither player win therefore no changes to score counter
+
+Player makes next selection, for this instance Player chooses rock, Computer chooses lizard:
+- Correct message is displayed with correct border colour
+- Correct images are displayed in the game area
+- Player wins and therefore player score is raised to 1
+
+Continues to play game until one player reaches 10 wins, for this instance computer wins:
+- Results message, game images and score counter checked for each round played
+- Correct results message and fill colour displayed for computer winning
+- Quit button replaced with reset button
+- Player choice buttons locked so game cannot continue
+
+Game reset:
+- Upon clicking the reset button, game starts again from the beginning
+
+Quit during game play:
+- Upon clicking the quit button, game starts again from the beginning
 
 # Bugs
+1. Upon publishing the site with GitHub it was clear that relative pathways were not working and caused a problem with loading the images on the website. This was easily fixed by updating all the file pathways to absolute. 
+
+2. An issue that is systematic with the way the code has been built is the final declaration of the winner. The intent is for the winner to be declared as soon as they reach 10 wins on the score counter. The score counter functions stem off the event listeners for the 5 player choice buttons which has caused a quirk in the code. The player can reach and display a score of 10 however the winner isn't declared until the next round is played and the score counter function is called again. Although this isn't an issue to the game play it's a little clunky and would benefit from being resolved. Unfortunately time has run out to be able to address this in the initial release.
+
+![Winner score bug for Rock, Paper, Scissors, Lizard, Spock game](/assets/readMe-images/RPSLS_win_bug.png)
 
 # Deployment
 
