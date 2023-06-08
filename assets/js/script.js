@@ -1,6 +1,5 @@
 var computerPlay;
 var start = 0;
-console.log(start);
 
 // Hides quit button - revealed once start button has been clicked
 document.getElementById("quit").style.display = "none"
@@ -42,37 +41,46 @@ let scissorsButton = document.getElementById("scissors");
 let lizardButton = document.getElementById("lizard");
 let spockButton = document.getElementById("spock");
 
-if (start === 1) {
 rockButton.addEventListener("click",function() {
+    if (start ===1){
     playerChoice('rock');
     computerChoice();
     runGame('rock');
+    }
 })
 
 paperButton.addEventListener("click",function() {
+    if (start ===1){
     playerChoice('paper');
     computerChoice();
     runGame('paper');
+    }
 })
 
 scissorsButton.addEventListener("click",function() {
+    if (start ===1){
     playerChoice('scissors');
     computerChoice();
     runGame('scissors');
+    }
 })
 
 lizardButton.addEventListener("click",function() {
+    if (start ===1){
     playerChoice('lizard');
     computerChoice();
     runGame('lizard');
+    }
 })
 
 spockButton.addEventListener("click",function() {
+    if (start ===1){
     playerChoice('spock');
     computerChoice();
     runGame('spock');
+    }
 })
-}
+
 /*
 * Feeds correct image into player selection area based 
 * on what is clicked
