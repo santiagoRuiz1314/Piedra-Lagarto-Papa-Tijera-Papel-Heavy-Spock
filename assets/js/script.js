@@ -43,7 +43,7 @@ resetButton.addEventListener("click", function() {
 let rulesButton = document.getElementById("rules");
 
 rulesButton.addEventListener("click", function() {
-    window.open('../rules.html', '_blank');
+    window.open('./rules.html', '_blank');
 })
 
 /* Set-up event listeners for the 5 player choice options
