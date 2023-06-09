@@ -38,14 +38,6 @@ resetButton.addEventListener("click", function() {
     location.reload();
 });
 
-// Rules button event listener
-// window.open function taken from Codex World online reference
-let rulesButton = document.getElementById("rules");
-
-rulesButton.addEventListener("click", function() {
-    window.open('./rules.html', '_blank');
-})
-
 /* Set-up event listeners for the 5 player choice options
 * and run functions when clicked
 */
