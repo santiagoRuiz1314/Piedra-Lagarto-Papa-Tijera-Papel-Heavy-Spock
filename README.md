@@ -244,7 +244,7 @@ Using W3C Markup validation the code has been checked for errors with the follow
 
 HTML, Game page (index.html): 
 - 1 error: button element must not be within an anchor element 
-- This error was addressed by setting up a "Rule button" event listener and using JavaScript code (window.open) to open a new tab with the rules page when the button is clicked.
+- This error was initially addressed by setting up a "Rule button" event listener and using JavaScript code (window.open) to open a new tab with the rules page when the button is clicked. This worked in the IDE but after publishing, the file path didn't work as expected. GitHub Pages likes absolute file paths but this didn't seem to make a difference on this occasion. This error was eventually fixed by turning the "Rules" link back to an anchor element and then styling it to look like a button. 
 
 HTML, Rules page (rules.html): 
 - 1 error: bad attribute using height 600px with img element. 
@@ -272,7 +272,7 @@ Live site: https://tr94.github.io/rock-paper-scissors-lizard-spock/
 - Rock, Paper, Scissors, Lizard and Spock images taken from: https://github.com/topics/rock-paper-scissors-lizard-spock?l=html
 
 ## Words: 
-Rules page words taken directly from: https://the-big-bang-theory.com/rock-paper-scissors-lizard-spock/
+- Rules page words taken directly from: https://the-big-bang-theory.com/rock-paper-scissors-lizard-spock/
 
 ## Code:
 - setTimeOut function was taken from W3Schools online reference 
@@ -280,5 +280,5 @@ Rules page words taken directly from: https://the-big-bang-theory.com/rock-paper
 - window.open method for making a button a hyperlink was taken from online site "Codex World, How to Open URL in New Tab using JavaScript"
 
 ## Acknowledgements:
-Thank you to the tutor support at Code Institute for helping me with the different types of variables and how to pass them through functions
-Thank you to my mentor for their help in guiding the project, technical code advice and improvement suggestions
+- Thank you to the tutor support at Code Institute for helping me with the different types of variables and how to pass them through functions
+- Thank you to my mentor for their help in guiding the project, technical code advice and improvement suggestions
