@@ -115,3 +115,5 @@ Este proyecto no solo ayudó a consolidar conocimientos técnicos, sino que tamb
 4. Documentar tanto los logros como los problemas encontrados
 
 ---
+## Créditos
+Este proyecto fue originalmente creado por **TR94**. Se ha tomado como referencia su trabajo publicado en el repositorio de GitHub: https://github.com/TR94/rock-paper-scissors-lizard-spock
