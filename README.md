@@ -1,284 +1,117 @@
-# Rock Paper Scissors Lizard Spock
+# Proyecto: Rock Paper Scissors Lizard Spock
+
+## Introducción
+Este proyecto es una versión interactiva del juego "Piedra, Papel, Tijera, Lagarto, Spock" que se hizo famoso gracias a la serie The Big Bang Theory. El desarrollador, siendo fan de la serie, quiso recrear esta variante del clásico juego para que otros fans puedan disfrutarlo también. El objetivo del juego es ser el primero en llegar a 10 victorias contra la computadora.
+
+## Tecnologías Utilizadas
+
+### HTML5
+Se eligió HTML5 para estructurar el sitio web porque:
+- Permite usar etiquetas semánticas como `<section>`, `<div>` y `<button>` que ayudan a organizar claramente las áreas del juego
+- Los atributos "aria-label" mejoran la accesibilidad del juego, algo fundamental para que todos los usuarios puedan disfrutarlo
+- El uso de `<span>` para los contadores de puntuación permite actualizar dinámicamente estos valores con JavaScript
+- La estructura de elementos anidados facilita aplicar estilos CSS específicos a cada componente del juego
+
+En concreto, se utilizaron contenedores `<div>` para separar las diferentes áreas del juego: los botones de control (start, quit, reset), el área de selección con los cinco botones del juego, la sección de resultados para mostrar mensajes, el área principal de juego y el contador de puntuación.
+
+### CSS3
+Se utilizó CSS3 para el diseño y estilo del sitio porque:
+- Las media queries permitieron crear un diseño responsive con reglas específicas para pantallas menores a 550px, donde se redujo el tamaño de los botones para que encajaran correctamente
+- Los selectores CSS como `#game-area` y `.selection` ayudaron a aplicar estilos específicos a cada componente sin tener que modificar el HTML
+- Las propiedades de transición (`:hover`) permitieron agregar bordes de colores específicos para cada opción, que reflejan los mismos colores usados en la imagen de las reglas del juego
+- Las propiedades `flex` y `grid` facilitaron alinear correctamente los elementos y mantener la estructura visualmente equilibrada
+
+Para las fuentes, se importaron específicamente "Orbitron" para los títulos y "Prompt" para el texto del cuerpo. Esta combinación fue encontrada usando Font-Joy, que ayudó a crear un contraste entre el estilo futurista de los encabezados (perfecto para la temática espacial/sci-fi) y la legibilidad del texto principal. El color de fondo gris-oscuro se eligió para simular un ambiente espacial o una nave, reforzando la conexión con Spock y el universo de Star Trek.
+
+### JavaScript
+JavaScript fue la tecnología más importante en este proyecto porque:
+- Los event listeners (`addEventListener`) me permitieron capturar los clics del usuario en los botones de juego y ejecutar las funciones correspondientes
+- El método `Math.floor(Math.random() * 5)` me permitió generar selecciones aleatorias para la computadora, garantizando que el juego sea imparcial
+- El DOM manipulation (`document.getElementById`, `innerHTML`, `createElement`) me dio la capacidad de actualizar dinámicamente el contenido y las imágenes en la página sin recargarla
+- La función `setTimeout()` me permitió crear un efecto de "pensamiento" para la computadora, haciendo que parezca que está tomando su decisión
+- Los condicionales (`if/else`) fueron fundamentales para implementar la compleja lógica de las 15 combinaciones posibles del juego
+
+Las funciones específicas que desarrollé incluyen:
+- `computerChoice()` - Genera una selección aleatoria para la computadora usando números del 0 al 4 que corresponden a cada opción
+- `checkWinner()` - Compara las elecciones del jugador y la computadora según las reglas oficiales (por ejemplo, "tijeras cortan papel", "papel cubre roca")
+- `updateScore()` - Modifica los contadores de puntuación accediendo directamente a los elementos del DOM mediante sus IDs
+- `displayResults()` - Muestra mensajes personalizados para cada combinación y cambia el color del borde según el resultado
+- `gameReset()` - Utiliza `location.reload()` para reiniciar completamente el juego cuando un jugador alcanza 10 victorias o cuando el usuario decide abandonar
+
+## Características del Juego
+
+### Sistema de Puntuación
+Se implementó un sistema de puntuación utilizando elementos `<span>` con IDs específicos (`pScore` y `cScore`) que son actualizados dinámicamente mediante JavaScript. El juego termina cuando uno de los jugadores alcanza 10 victorias, lo que se detecta mediante una comparación en cada ronda (`if (playerScore >= 10 || computerScore >= 10)`).
+
+### Retroalimentación Visual
+Cada ronda proporciona retroalimentación visual y textual mediante:
+- El uso de la propiedad `innerHTML` para cambiar las imágenes en `player-image` y `computer-image`
+- Mensajes específicos para cada combinación (ej: "papel cubre roca", "tijeras cortan papel") mostrados en el área de resultados
+- Cambios de color en el borde del área de resultados mediante manipulación de la propiedad `style.borderColor` (verde:#31a849 para victoria, rojo:#dc143c para derrota)
+- La propiedad `style.backgroundColor` para resaltar el resultado final cuando un jugador llega a 10 victorias
+
+### Interfaz Intuitiva
+La interfaz fue diseñada utilizando prácticas de UX específicas:
+- Cambio de cursor a `pointer` en los elementos interactivos para indicar que son clickeables
+- Textos instructivos que cambian según el estado del juego mediante `result-para.innerHTML`
+- Ocultación y visualización de botones usando `style.display = "none"` y `style.display = "inline-block"` según la fase del juego
+- Atributos `aria-label` en todos los botones interactivos para mejorar la accesibilidad
+
+### Diseño Responsive
+El juego está construido para funcionar en diferentes tamaños de pantalla mediante:
+- Media query `@media screen and (max-width: 550px)` que ajusta el tamaño de los botones del 25% al 19% del ancho
+- Uso de unidades relativas (%, em) en lugar de absolutas (px) para que los elementos escalen proporcionalmente
+- Contenedores flex que reorganizan sus elementos según el espacio disponible
+- Pruebas realizadas en múltiples dispositivos (iPhone SE, iPhone XR, Pixel 5 y S20 Ultra) para verificar la compatibilidad
+
+## Desafíos y Soluciones
+
+### Lógica del Juego
+El mayor desafío fue implementar correctamente todas las reglas del juego (15 combinaciones posibles, 5 opciones × 3 resultados posibles). Para solucionarlo:
+- Se utilizó una estructura de condicionales anidados que verifica cada combinación específica
+- Se implementó la lógica específica para cada regla (por ejemplo: "tijeras cortan papel", "lagarto envenena a Spock")
+- Se crearon mensajes personalizados para cada combinación que explican por qué una opción gana sobre otra
+- Se aseguró que el empate se detectara correctamente cuando ambos jugadores eligen la misma opción
+
+Este enfoque resultó más claro y mantenible que intentar crear un algoritmo matemático complejo.
+
+### Retroalimentación Dinámica
+Otro desafío fue actualizar correctamente todos los elementos visuales después de cada jugada:
+- Para las imágenes, se usó la propiedad `innerHTML` para insertar la etiqueta `<img>` completa con la ruta correcta según la elección
+- Para los mensajes de resultado, se creó un objeto que mapea cada combinación a su mensaje específico
+- Para el cambio de colores, se definieron variables de color en JavaScript que se aplican según el resultado
+- Para la transición entre estados del juego, se implementaron funciones específicas que modifican múltiples elementos a la vez
+
+### Rutas de Archivos
+Un problema inesperado surgió al publicar el sitio en GitHub Pages: las rutas relativas de los archivos no funcionaban correctamente. La solución fue:
+- Cambiar todas las rutas a absolutas para que apuntaran correctamente a las carpetas del repositorio
+- Verificar la estructura de carpetas para asegurar que coincidiera exactamente con la ruta especificada
+- Probar exhaustivamente todas las imágenes y enlaces después de la publicación
+
+### Bug en la Detección del Ganador Final
+Se descubrió un error en la lógica donde el ganador final solo se declaraba después de jugar una ronda adicional después de alcanzar 10 puntos. Este bug ocurría porque:
+- La verificación del puntaje final estaba dentro de la función que se ejecuta después de cada selección
+- La actualización del puntaje y la verificación de victoria final ocurrían en orden incorrecto
+
+Aunque no fue posible solucionar este problema antes de la entrega por limitaciones de tiempo, se documentó para futuras mejoras.
+
+## Conclusión
+Este proyecto permitió aplicar conocimientos de HTML, CSS y JavaScript para crear una experiencia interactiva basada en un elemento de la cultura pop. Específicamente:
+
+- **HTML5**: Permitió estructurar el contenido de manera clara y semántica, empleando atributos de accesibilidad y una organización que facilita tanto la visualización como la manipulación mediante JavaScript.
 
-This website has been based on the Rock, Paper, Scissors, Lizard, Spock game originally created by Sam Kass. Fans of the Big Bang Theory television series will recognise this game as it features in several episodes. This site provides an interactive version of the game where users can play against the computer with the goal of being the first to 10 wins. 
+- **CSS3**: Proporcionó las herramientas para crear un diseño visualmente atractivo con la temática espacial/sci-fi, implementando efectos interactivos y asegurando que la experiencia sea consistente en diferentes dispositivos.
 
-The website has been made to complete the second project within the Code Institute Full Stack Developer course and focuses predominately on the use of the Java Script language. It also uses HTML5 and CCS3 for the structure of the site being built in a way that allows it to be responsive across a range of devices. 
+- **JavaScript**: Fue la tecnología más desafiante e importante, ya que fue necesario implementar toda la lógica del juego, desde la generación de selecciones aleatorias hasta el manejo de estados, actualización de elementos visuales y control del flujo del juego.
 
-![Am I responsive? for Rock, Paper, Scissors, Lizard, Spock game website](/assets/readMe-images/RPSLS_responsive.png)
+Las pruebas de accesibilidad realizadas con Lighthouse arrojaron buenos resultados, con puntuaciones altas en rendimiento y accesibilidad. Sin embargo, aún hay aspectos que podrían mejorarse en futuras versiones, como la corrección del bug en la detección del ganador final y la optimización del diseño responsive para pantallas de tamaño mediano.
 
+Este proyecto no solo ayudó a consolidar conocimientos técnicos, sino que también enseñó la importancia de:
+1. Planificar la estructura antes de comenzar a codificar
+2. Utilizar herramientas de wireframing para visualizar el diseño
+3. Probar el proyecto en diferentes dispositivos
+4. Documentar tanto los logros como los problemas encontrados
 
-Link to live project: https://tr94.github.io/rock-paper-scissors-lizard-spock/
+---
 
-# User Experience
-
-The target audience for this site are fans of the Big Bang Theory who will already be familiar with the game from watching the television series. This site is intended to allow them to play the game, as seen on television, against a randomised computer output. 
-
-The user goals for new and returning users are the same:
-- As a user, I want to play the game as seen in the television show
-- As a user, I want the game to have a goal to aim for with a tally of scores
-- As a new user, I want be reminded of the rules of the game
-
-# Development Planes
-
-To develop the site in a structured manner the 5 development planes have been considered. Working through these in a systematic manner allows the key building blocks of the site to be in place before fine tuning the aesthetics. Working methodically in this way should result in the initial release being much closer to the final desired output. 
-
-## Strategy
-
-There are no commercial drivers for this website, it’s pure focus is to provide an interactive game for fans of the Big Bang Theory series. Therefore the only strategic requirements for the site are to ensure the user has an authentic gaming experience which:
-- Is accurate to the rules of the game
-- Feels genuine I.e; computer opponent is fair
-- Is interactive and engaging
-
-## Scope
-
-Defining the scope at this early stage allows the development work to stay focused, it agrees what is on and off the table for the initial release. 
-
-Based on the user experience and strategy above, the content requirements are:
-- A reminder of the rules of the game 
-- A game area for the user to interact with
-- A goal for the user to work towards 
-- A score counter for the user to being to track against the goal
-- Feedback for the result of each round
-
-## Structure
-The structure of this site is very simple:
-- Game page; will hold the game content  
-- Rules page; linked from the home page and opens in a new tab. A static page showing the rules
-
-![Site Map for Rock, Paper, Scissors, Lizard, Spock game website](/assets/readMe-images/RPSLS_Structure.png)
-
-## Skeleton
-
-In order to visualise the pages, the content has been mocked up using wireframes. Using wireframes at this stage of the development allows the freedom to be creative without being tied into the code. This gives a flavour of how the page(s) will look and can be easily modified until agreement is reached. 
-
-Balsamiq was used to create the wireframes: 
-
-Game page:
-
-![Game page wireframe for Rock, Paper, Scissors, Lizard, Spock game](/assets/readMe-images/RPSLS_Home.png)
-
-Rules page:
-
-![Rules page wireframe for Rock, Paper, Scissors, Lizard, Spock game](/assets/readMe-images/RPSLS_Rules.png)
-
-At this stage, the wireframes are reviewed against the original goals and strategy for the site. It is important to check the design is fit for purpose before committing to the coding process. 
-
-Review against the content requirements: 
-A reminder of the rules of the game:
-- Adding the rules into the main game would have distracted from the game and made the page quite busy. Button added which opens a new tab and displays the rules for users that need a reminder.
-A game area for the user to interact with:
-- Clear instructions will be given on how to operate the game, pseudo styling will indicate action to the user. 
-A goal for the user to work towards:
-- First to 10 wins is the clear goal for this game
-A score counter for the user to track against the goal:
-- Score counter included at the bottom of the page to keep track against the goal
-Feedback for the result of each round:
-- "Win or Lose" box will display the result of each round such as "paper covers rock".
-
-For this site the review showed the design to meet the requirements and therefore agreement was made to proceed. 
-
-## Surface:
-Once the structure and wireframe have been agreed, the look and feel of the site can be developed. This may need to align to branding but in the case of this site there are no commercial requirements. 
-
-Based on the Big Bang Theory and science themes along with Sci-Fi Spock influence, the styling for this site is a space/sci-fi theme. 
-
-### Colour
-The over-arching colour for the background is an off-grey which feels modern and perhaps a little industrial like a space ship. 
-
-The hover colours for each button as carried through from the image explaining the game rules (hyperlinked "rules" button). This image was taken from an internet search so the styling was not under the control of this project however keeping the colours consistent throughout helps it feel part of the overal design. 
-
-The results feedback box uses simple colours to denote win (green) and lose (red) which is easily understandable to the player. 
-
-### Font
-Google Fonts was used to find a font pairing that portrays a Sci-Fi theme.
-
-"Orbitron" was recommended for this and, using Font-Joy it was paired with "Prompt". Orbitron gives a heavy title which is bold and clear whilst Prompt is easier to read for the body of the website. 
-
-### Images and Icons
-The imagery for this website has been kept deliberately simple to not distract from the game. The player choice buttons has been imaged with the hand signals for each option, more realistic images of the options could have been used but it was decided to keep the game feeling more like something you would play in the playground with an opponent. 
-
-The icon for the tab title mirrors this using a hand "fist" just like you're playing face to face with your opponent. The icon was sourced from Font Awesome.
-
-# Features: 
-The game page has been split into several sections which has distinct purposes. See image below for diagram:
-![Explanation of Rock, Paper, Scissors, Lizard, Spock game area](/assets/readMe-images/RPSLS_markup.png)
-
-Button area:
-This has 4 buttons in total however they are displayed at different points within the game. 
-- Rules: The "rules" button is always on show and this links to a new tab page displaying the rules. 
-- Start: "Start" has to be clicked by the player before the game can start. The reset of the game functionality is locked until this button is clicked.
-- Quit: Once the "start" button has been clicked it disappears and is replaced with a "quit" button. This is clicked if the player wants to end the game and it resets the game. 
-- Reset: Once the game has been played out and one of the players has reached 10 wins the game will declare the winner. At this point the "quit" button will disappear and be replaced with a "reset" button which also resets the game.
-
-Choice area: 
-This area is "unlocked" once the "start" button has been clicked. The player can then make their choice for the round by clicking on their desired image. The cursor changes to indicate a clickable link and when hovering over any of the images a border colour is added to make the choice clear and interative. 
-
-Results / Feedback area:
-This provides instructions and feedback to the player. 
-Upon loading the game the instruction is provided to click the "start" button. 
-Once the "start" button is clicked, the instruction is provided to make a choice using the 5 image buttons. 
-As soon as the first choice is made this area then becomes feedback on the results of each round such as "rock smashes scissors - player wins!"
-When one of the players reaches 10 the box colour fills red or green and declares the final winner with an instruction to click the "reset" button. 
-
-Game area:
-The area where the head to head gaming happens. The player and computer choices are displayed here next to each other for each round. 
-
-Score counter area: 
-The scores are kept in a simple counter in this area. 
-
-# Technologies used:
-
-## Coding languages used: 
-
-HTML5
-CCS3
-Java Script
-
-## External resources: 
-
-Google Fonts: “Orbitron” and “Prompt” fonts imported externally into the CSS file. These are the only two fonts used in the project.
-
-Font Joy:
-Suggested the pairings of “Orbitron” title font with a suitable body text font which was "Prompt”.
-
-Font Awesome:
-Single "fist" icon linked into the HTML file for the tab title.
-
-Am I Responsive?:
-Used to test out how friendly the site is across various screen sizes. The responsive nature of the site is shown at the top of this document in the mock-up.
-
-Balsamiq:
-Simple wireframing to draft out the basic structure of the pages before commiting to coding.
-
-Git-Hub / Code Anywhere:
-Git-hub is used to store the project files and is used to host the site. Code Anywhere was used as the IDE to code the website.
-
-Google Web Developer Tools:
-Google Chrome was used as the browser for the development of this website game. The inbuilt Developer Tools were utilised to understand the HTML, CSS and Java Script workings in real-time.
-
-# Accessibility: 
-
-Considering how to make a website is accessible to all users should be high on the list of priorities during development. For this site the following aspects have been incorporated:
-- Aria labels for the 3 game buttons (start, quit, reset)
-- Aria labels on the 5 game choice buttons
-- Aria label on the “rules page” link stating it opens in a new tab
-
-Within Google Developer tools, Lighthouse is a way of measuring the accessibility of a website. For this site the report shows as below:
-
-![Lighthouse scores for Rock, Paper, Scissors, Lizard, Spock game](/assets/readMe-images/RPSLS_lighthouse.png)
-
-# Testing
-The testing process is a key part of the development of any website. Before initial release the testing phase ensures the code is robust and will deliver the intended user experience. 
-
-## User Goals
-The user goals were set-up at the start of development during the Strategy phase and reviewed again during the Skeleton phase. The content requirements have been reviewed against the finished website: 
-
-A reminder of the rules of the game:
-- The "Rules" button gives players the option to navigate to a seperate page if they need a reminder of the game rules.
-A game area for the user to interact with:
-- Interaction points are intuitive for the player using the standard convention of a cursor change when hovering over clickable elements.
-- The game choice buttons also have a border colour which is activated when the player hovers over the specific image.
-- Instructions are given in the centre of the page which make it clear what is expected of the player at various stages in the game.
-A goal for the user to work towards:
-- The goal of "First to 10 wins" is clearly stated at the top of the page
-- The game has been set-up to finish after one of the players reaches 10 wins
-A score counter for the user to track against the goal:
-- At the bottom of the page there is a simple counter that clearly displays the scores during the game
-Feedback for the result of each round:
-- The box in the centre of the page gives instructions showing the player what they need to do
-- This box also gives an appropriate message depending on the result of each round
-- Another message is displayed once the game has finished - one player has reached 10 wins.
-
-## Manual Testing
-### Functionality testing:
-Landing page:
-- Page is being displayed as expected 
-- Quit button and Reset button are hidden as expected
-- Initial instruction to click the start button displayed as expected 
-- Game area is blank as expected
-- Scores are both reading 0
-
-Start button clicked:
-- Start button is replaced with Quit button 
-- Instruction changes, displaying correct message 
-- Game area displaying message in "Computer" choice area with appropriate timer delay 
-
-Game begins with player making first selection, for this instance Player chooses rock, Computer chooses spock:
-- Correct message is displayed with correct border colour 
-- Correct images are displayed in the game area
-- Computer wins and therefore computer score is raised to 1
-
-Player makes next selection, for this instance Player chooses scissors, Computer chooses scissors:
-- Draw message displayed with correct border color
-- Correct images are dispalted in the game area
-- Neither player win therefore no changes to score counter
-
-Player makes next selection, for this instance Player chooses rock, Computer chooses lizard:
-- Correct message is displayed with correct border colour
-- Correct images are displayed in the game area
-- Player wins and therefore player score is raised to 1
-
-Continues to play game until one player reaches 10 wins, for this instance computer wins:
-- Results message, game images and score counter checked for each round played
-- Correct results message and fill colour displayed for computer winning
-- Quit button replaced with reset button
-- Player choice buttons locked so game cannot continue
-
-Game reset:
-- Upon clicking the reset button, game starts again from the beginning
-
-Quit during game play:
-- Upon clicking the quit button, game starts again from the beginning
-
-### Responsiveness 
-Using Google Chrome Dev Tools, the responsiveness of the site can be tested through multiple view ports (device emulator). 
-
-Testing was carried out using the following mobile devices; iPhone SE, iPhone XR, Pixel 5 and S20 Ultra. At the mobile screen size the game fits onto the screen without having to scroll to reach buttons. The buttons are smaller for screens less than 550px wide to ensure the game fits appropriately.
-
-At the tablet size, iPad air and iPad mini both have one of the choice buttons on a new row. This isn't a functional problem but aesthetically does look a little unbalanced and could be address with another media query at a viewport size of around 850px. 
-
-At the desktop size, the game fits without any issues. All 5 player choice buttons fit across the screen and the game looks balanced and centralised. 
-
-### Code Validation
-Using W3C Markup validation the code has been checked for errors with the following results:
-
-HTML, Game page (index.html): 
-- 1 error: button element must not be within an anchor element 
-- This error was initially addressed by setting up a "Rule button" event listener and using JavaScript code (window.open) to open a new tab with the rules page when the button is clicked. This worked in the IDE but after publishing, the file path didn't work as expected. GitHub Pages likes absolute file paths but this didn't seem to make a difference on this occasion. This error was eventually fixed by turning the "Rules" link back to an anchor element and then styling it to look like a button. 
-
-HTML, Rules page (rules.html): 
-- 1 error: bad attribute using height 600px with img element. 
-
-CSS, (style.css):
-- No errors reported 
-
-# Bugs
-1. Upon publishing the site with GitHub it was clear that relative pathways were not working and caused a problem with loading the images on the website. This was easily fixed by updating all the file pathways to absolute. 
-
-2. An issue that is systematic with the way the code has been built is the final declaration of the winner. The intent is for the winner to be declared as soon as they reach 10 wins on the score counter. The score counter functions stem off the event listeners for the 5 player choice buttons which has caused a quirk in the code. The player can reach and display a score of 10 however the winner isn't declared until the next round is played and the score counter function is called again. Although this isn't an issue to the game play it's a little clunky and would benefit from being resolved. Unfortunately time has run out to be able to address this in the initial release.
-
-![Winner score bug for Rock, Paper, Scissors, Lizard, Spock game](/assets/readMe-images/RPSLS_win_bug.png)
-
-# Deployment
-
-This project was developed using Code Anywhere and all updates were committed to GitHub to keep track of changes and store the code. The website is deployed using GitHub Pages which provides a published link to the live site. 
-
-Live site: https://tr94.github.io/rock-paper-scissors-lizard-spock/
-
-# Credits 
-
-## Media:
-- Rules page game diagram taken from: https://www.momonhg.com/blog/rock-paper-scissors-lizard-and-spock-game
-- Rock, Paper, Scissors, Lizard and Spock images taken from: https://github.com/topics/rock-paper-scissors-lizard-spock?l=html
-
-## Words: 
-- Rules page words taken directly from: https://the-big-bang-theory.com/rock-paper-scissors-lizard-spock/
-
-## Code:
-- setTimeOut function was taken from W3Schools online reference 
-- location.reload function was taken from W3Schools online reference 
-- window.open method for making a button a hyperlink was taken from online site "Codex World, How to Open URL in New Tab using JavaScript"
-
-## Acknowledgements:
-- Thank you to the tutor support at Code Institute for helping me with the different types of variables and how to pass them through functions
-- Thank you to my mentor for their help in guiding the project, technical code advice and improvement suggestions
+**Nota para la profesora**: Este proyecto fue desarrollado como parte del curso de desarrollo web. Se eligió recrear el juego "Rock, Paper, Scissors, Lizard, Spock" porque, además de ser fan de The Big Bang Theory, pareció un excelente caso para implementar lógica condicional compleja en JavaScript mientras se practicaban elementos interactivos. Las tecnologías fueron seleccionadas específicamente por su capacidad para crear una experiencia de usuario completa: HTML5 para la estructura, CSS3 para el diseño responsive y la estética sci-fi, y JavaScript para la lógica e interactividad. La implementación siguió el modelo de desarrollo de 5 planos (estrategia, alcance, estructura, esqueleto y superficie) que se aprendió en clase.
