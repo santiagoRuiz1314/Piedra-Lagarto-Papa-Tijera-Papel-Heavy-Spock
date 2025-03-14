@@ -7,59 +7,59 @@ Este proyecto es una versión interactiva del juego "Piedra, Papel, Tijera, Laga
 
 ### HTML5
 Se eligió HTML5 para estructurar el sitio web porque:
-- Permite usar etiquetas semánticas como `<section>`, `<div>` y `<button>` que ayudan a organizar claramente las áreas del juego
-- Los atributos "aria-label" mejoran la accesibilidad del juego, algo fundamental para que todos los usuarios puedan disfrutarlo
-- El uso de `<span>` para los contadores de puntuación permite actualizar dinámicamente estos valores con JavaScript
+- Permite usar etiquetas semánticas como **section**, **div** y **button** que ayudan a organizar claramente las áreas del juego
+- Los atributos **aria-label** mejoran la accesibilidad del juego, algo fundamental para que todos los usuarios puedan disfrutarlo
+- El uso de **span** para los contadores de puntuación permite actualizar dinámicamente estos valores con JavaScript
 - La estructura de elementos anidados facilita aplicar estilos CSS específicos a cada componente del juego
 
-En concreto, se utilizaron contenedores `<div>` para separar las diferentes áreas del juego: los botones de control (start, quit, reset), el área de selección con los cinco botones del juego, la sección de resultados para mostrar mensajes, el área principal de juego y el contador de puntuación.
+En concreto, se utilizaron contenedores **div** para separar las diferentes áreas del juego: los botones de control (start, quit, reset), el área de selección con los cinco botones del juego, la sección de resultados para mostrar mensajes, el área principal de juego y el contador de puntuación.
 
 ### CSS3
 Se utilizó CSS3 para el diseño y estilo del sitio porque:
 - Las media queries permitieron crear un diseño responsive con reglas específicas para pantallas menores a 550px, donde se redujo el tamaño de los botones para que encajaran correctamente
-- Los selectores CSS como `#game-area` y `.selection` ayudaron a aplicar estilos específicos a cada componente sin tener que modificar el HTML
-- Las propiedades de transición (`:hover`) permitieron agregar bordes de colores específicos para cada opción, que reflejan los mismos colores usados en la imagen de las reglas del juego
-- Las propiedades `flex` y `grid` facilitaron alinear correctamente los elementos y mantener la estructura visualmente equilibrada
+- Los selectores CSS como **#game-area** y **.selection** ayudaron a aplicar estilos específicos a cada componente sin tener que modificar el HTML
+- Las propiedades de transición (**:hover**) permitieron agregar bordes de colores específicos para cada opción, que reflejan los mismos colores usados en la imagen de las reglas del juego
+- Las propiedades **flex** y **grid** facilitaron alinear correctamente los elementos y mantener la estructura visualmente equilibrada
 
 Para las fuentes, se importaron específicamente "Orbitron" para los títulos y "Prompt" para el texto del cuerpo. Esta combinación fue encontrada usando Font-Joy, que ayudó a crear un contraste entre el estilo futurista de los encabezados (perfecto para la temática espacial/sci-fi) y la legibilidad del texto principal. El color de fondo gris-oscuro se eligió para simular un ambiente espacial o una nave, reforzando la conexión con Spock y el universo de Star Trek.
 
 ### JavaScript
 JavaScript fue la tecnología más importante en este proyecto porque:
-- Los event listeners (`addEventListener`) me permitieron capturar los clics del usuario en los botones de juego y ejecutar las funciones correspondientes
-- El método `Math.floor(Math.random() * 5)` me permitió generar selecciones aleatorias para la computadora, garantizando que el juego sea imparcial
-- El DOM manipulation (`document.getElementById`, `innerHTML`, `createElement`) me dio la capacidad de actualizar dinámicamente el contenido y las imágenes en la página sin recargarla
-- La función `setTimeout()` me permitió crear un efecto de "pensamiento" para la computadora, haciendo que parezca que está tomando su decisión
-- Los condicionales (`if/else`) fueron fundamentales para implementar la compleja lógica de las 15 combinaciones posibles del juego
+- Los event listeners (**addEventListener**) permitieron capturar los clics del usuario en los botones de juego y ejecutar las funciones correspondientes
+- El método **Math.floor(Math.random() * 5)** permitió generar selecciones aleatorias para la computadora, garantizando que el juego sea imparcial
+- El DOM manipulation (**document.getElementById**, **innerHTML**, **createElement**) tiene la capacidad de actualizar dinámicamente el contenido y las imágenes en la página sin recargarla
+- La función **setTimeout()** me permitió crear un efecto de "pensamiento" para la computadora, haciendo que parezca que está tomando su decisión
+- Los condicionales (**if/else**) fueron fundamentales para implementar la compleja lógica de las 15 combinaciones posibles del juego
 
 Las funciones específicas que desarrollé incluyen:
-- `computerChoice()` - Genera una selección aleatoria para la computadora usando números del 0 al 4 que corresponden a cada opción
-- `checkWinner()` - Compara las elecciones del jugador y la computadora según las reglas oficiales (por ejemplo, "tijeras cortan papel", "papel cubre roca")
-- `updateScore()` - Modifica los contadores de puntuación accediendo directamente a los elementos del DOM mediante sus IDs
-- `displayResults()` - Muestra mensajes personalizados para cada combinación y cambia el color del borde según el resultado
-- `gameReset()` - Utiliza `location.reload()` para reiniciar completamente el juego cuando un jugador alcanza 10 victorias o cuando el usuario decide abandonar
+- **computerChoice()** - Genera una selección aleatoria para la computadora usando números del 0 al 4 que corresponden a cada opción
+- **checkWinner()** - Compara las elecciones del jugador y la computadora según las reglas oficiales (por ejemplo, "tijeras cortan papel", "papel cubre roca")
+- **updateScore()** - Modifica los contadores de puntuación accediendo directamente a los elementos del DOM mediante sus IDs
+- **displayResults()** - Muestra mensajes personalizados para cada combinación y cambia el color del borde según el resultado
+- **gameReset()** - Utiliza **location.reload()** para reiniciar completamente el juego cuando un jugador alcanza 10 victorias o cuando el usuario decide abandonar
 
 ## Características del Juego
 
 ### Sistema de Puntuación
-Se implementó un sistema de puntuación utilizando elementos `<span>` con IDs específicos (`pScore` y `cScore`) que son actualizados dinámicamente mediante JavaScript. El juego termina cuando uno de los jugadores alcanza 10 victorias, lo que se detecta mediante una comparación en cada ronda (`if (playerScore >= 10 || computerScore >= 10)`).
+Se implementó un sistema de puntuación utilizando elementos **<span>** con IDs específicos (**pScore** y **cScore**) que son actualizados dinámicamente mediante JavaScript. El juego termina cuando uno de los jugadores alcanza 10 victorias, lo que se detecta mediante una comparación en cada ronda (**if (playerScore >= 10 || computerScore >= 10)**).
 
 ### Retroalimentación Visual
 Cada ronda proporciona retroalimentación visual y textual mediante:
-- El uso de la propiedad `innerHTML` para cambiar las imágenes en `player-image` y `computer-image`
+- El uso de la propiedad **innerHTML** para cambiar las imágenes en **player-image** y **computer-image**
 - Mensajes específicos para cada combinación (ej: "papel cubre roca", "tijeras cortan papel") mostrados en el área de resultados
-- Cambios de color en el borde del área de resultados mediante manipulación de la propiedad `style.borderColor` (verde:#31a849 para victoria, rojo:#dc143c para derrota)
-- La propiedad `style.backgroundColor` para resaltar el resultado final cuando un jugador llega a 10 victorias
+- Cambios de color en el borde del área de resultados mediante manipulación de la propiedad **style.borderColor** (verde:#31a849 para victoria, rojo:#dc143c para derrota)
+- La propiedad **style.backgroundColor** para resaltar el resultado final cuando un jugador llega a 10 victorias
 
 ### Interfaz Intuitiva
 La interfaz fue diseñada utilizando prácticas de UX específicas:
-- Cambio de cursor a `pointer` en los elementos interactivos para indicar que son clickeables
-- Textos instructivos que cambian según el estado del juego mediante `result-para.innerHTML`
-- Ocultación y visualización de botones usando `style.display = "none"` y `style.display = "inline-block"` según la fase del juego
-- Atributos `aria-label` en todos los botones interactivos para mejorar la accesibilidad
+- Cambio de cursor a **pointer** en los elementos interactivos para indicar que son clickeables
+- Textos instructivos que cambian según el estado del juego mediante **result-para.innerHTML**
+- Ocultación y visualización de botones usando **style.display = "none"** y **style.display = "inline-block"** según la fase del juego
+- Atributos **aria-label** en todos los botones interactivos para mejorar la accesibilidad
 
 ### Diseño Responsive
 El juego está construido para funcionar en diferentes tamaños de pantalla mediante:
-- Media query `@media screen and (max-width: 550px)` que ajusta el tamaño de los botones del 25% al 19% del ancho
+- Media query **@media screen and (max-width: 550px)** que ajusta el tamaño de los botones del 25% al 19% del ancho
 - Uso de unidades relativas (%, em) en lugar de absolutas (px) para que los elementos escalen proporcionalmente
 - Contenedores flex que reorganizan sus elementos según el espacio disponible
 - Pruebas realizadas en múltiples dispositivos (iPhone SE, iPhone XR, Pixel 5 y S20 Ultra) para verificar la compatibilidad
@@ -77,7 +77,7 @@ Este enfoque resultó más claro y mantenible que intentar crear un algoritmo ma
 
 ### Retroalimentación Dinámica
 Otro desafío fue actualizar correctamente todos los elementos visuales después de cada jugada:
-- Para las imágenes, se usó la propiedad `innerHTML` para insertar la etiqueta `<img>` completa con la ruta correcta según la elección
+- Para las imágenes, se usó la propiedad **innerHTML** para insertar la etiqueta **<img>** completa con la ruta correcta según la elección
 - Para los mensajes de resultado, se creó un objeto que mapea cada combinación a su mensaje específico
 - Para el cambio de colores, se definieron variables de color en JavaScript que se aplican según el resultado
 - Para la transición entre estados del juego, se implementaron funciones específicas que modifican múltiples elementos a la vez
@@ -113,5 +113,3 @@ Este proyecto no solo ayudó a consolidar conocimientos técnicos, sino que tamb
 4. Documentar tanto los logros como los problemas encontrados
 
 ---
-
-**Nota para la profesora**: Este proyecto fue desarrollado como parte del curso de desarrollo web. Se eligió recrear el juego "Rock, Paper, Scissors, Lizard, Spock" porque, además de ser fan de The Big Bang Theory, pareció un excelente caso para implementar lógica condicional compleja en JavaScript mientras se practicaban elementos interactivos. Las tecnologías fueron seleccionadas específicamente por su capacidad para crear una experiencia de usuario completa: HTML5 para la estructura, CSS3 para el diseño responsive y la estética sci-fi, y JavaScript para la lógica e interactividad. La implementación siguió el modelo de desarrollo de 5 planos (estrategia, alcance, estructura, esqueleto y superficie) que se aprendió en clase.
