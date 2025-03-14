@@ -33,7 +33,7 @@ JavaScript fue la tecnología más importante en este proyecto porque:
 - La función **setTimeout()** me permitió crear un efecto de "pensamiento" para la computadora, haciendo que parezca que está tomando su decisión
 - Los condicionales (**if/else**) fueron fundamentales para implementar la compleja lógica de las 15 combinaciones posibles del juego
 
-Las funciones específicas que desarrollé incluyen:
+Las funciones específicas que desarrollo incluyen:
 - **computerChoice()** - Genera una selección aleatoria para la computadora usando números del 0 al 4 que corresponden a cada opción
 - **checkWinner()** - Compara las elecciones del jugador y la computadora según las reglas oficiales (por ejemplo, "tijeras cortan papel", "papel cubre roca")
 - **updateScore()** - Modifica los contadores de puntuación accediendo directamente a los elementos del DOM mediante sus IDs
