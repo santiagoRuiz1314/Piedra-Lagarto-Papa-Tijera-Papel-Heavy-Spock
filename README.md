@@ -3,6 +3,8 @@
 ## Introducción
 Este proyecto es una versión interactiva del juego "Piedra, Papel, Tijera, Lagarto, Spock" que se hizo famoso gracias a la serie The Big Bang Theory. El desarrollador, siendo fan de la serie, quiso recrear esta variante del clásico juego para que otros fans puedan disfrutarlo también. El objetivo del juego es ser el primero en llegar a 10 victorias contra la computadora.
 
+Link del proyecto: https://tr94.github.io/rock-paper-scissors-lizard-spock/
+
 ## Tecnologías Utilizadas
 
 ### HTML5
