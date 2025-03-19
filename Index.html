@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Piedra, Lagarto, Papa, Tijera, Papel, Heavy, Spock online game">
+    <meta name="keywords" content="Game, Big Bang Theory, Sam Kass, RPSLS, Generalized">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Piedra, Lagarto, Papa, Tijera, Papel, Heavy, Spock</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/Tab_icon.png">
+</head>
+<body>
+    <h1>Piedra, Lagarto, Papa, Tijera, Papel, Heavy, Spock</h1>
+    <p>First to 10 wins!</p>
+    
+    <!-- Game mode selector -->
+    <div id="mode-selector">
+        <p>Select game mode:</p>
+        <button id="vs-computer" class="mode-button active" aria-label="Play against computer">vs Computer</button>
+        <button id="vs-player" class="mode-button" aria-label="Play against another player">vs Player</button>
+    </div>
+
+    <div id="player-labels" class="hidden">
+        <span id="player1-label">Player 1</span>
+        <span id="player2-label">Player 2</span>
+    </div>
+    
+    <div id="turn-indicator" class="hidden">
+        <p id="turn-text">Player 1's turn to choose</p>
+    </div>
+
+    <div id="button-container">
+        <span id="start-button">
+            <button id="start" aria-label="Click to start game">Start</button>  
+        </span>
+        <span id="quit-button">
+            <button id="quit" aria-label="Click to quit game">Quit</button>  
+        </span>
+        <span id="reset-button">
+            <button id="reset" aria-label="Click to reset the game">Reset</button> 
+        </span>
+        <span id="rule-button">
+            <a id="rules" href="rules.html" target="_blank" aria-label="Click to access the rules page, opens in new tab">Rules</a>
+        </span>
+    </div>
+    
+    <div id="choose-area">
+        <div>
+            <p class="selection">Piedra</p>
+            <button type="button" class="button" id="rock" aria-label="Click to choose rock"></button>
+        </div>
+        <div>
+            <p class="selection">Lagarto</p>
+            <button type="button" class="button" id="lizard" aria-label="Click to choose lizard"></button>
+        </div>
+        <div>
+            <p class="selection">Papa</p>
+            <button type="button" class="button" id="papa" aria-label="Click to choose papa"></button>
+        </div>
+        <div>
+            <p class="selection">Tijera</p>
+            <button type="button" class="button" id="scissors" aria-label="Click to choose scissors"></button>
+        </div>
+        <div>
+            <p class="selection">Papel</p>
+            <button type="button" class="button" id="paper" aria-label="Click to choose paper"></button>
+        </div>
+        <div>
+            <p class="selection">Heavy</p>
+            <button type="button" class="button" id="heavy" aria-label="Click to choose heavy"></button>
+        </div>
+        <div>
+            <p class="selection">Spock</p>
+            <button type="button" class="button" id="spock" aria-label="Click to choose spock"></button>
+        </div>
+    </div>
+    
+    <div id="result">
+        <p id="result-para">Click the Start button to begin!</p>
+    </div>
+    
+    <div id="game-area">
+        <div class="game-container">
+            <p id="player1-name">Player</p>
+            <div id="player-image"></div>
+        </div>
+        <div class="game-container">
+            <p id="player2-name">Computer</p>
+            <div id="computer-image"></div>
+        </div>
+    </div>
+    
+    <div id="score-area">
+        <span class="score">Player 1 score:</span>
+        <span id="pScore"> 0 </span>
+        <span class="score">Player 2 score:</span> 
+        <span id="cScore"> 0 </span>
+    </div>    
+    
+    <script src="assets/js/script.js"></script> 
+</body>
+</html>
